@@ -43,6 +43,51 @@ function doScience {
     print "experiments done".
 }.
 
+function burnDuration {
+    parameter dv.
+}
+
+function stageDv {
+    parameter stageNo.
+    local g0 to 9.80665.
+
+    list engines in elist.
+    local se to list().
+    for e in elist {
+        if e:stage = stageNo {
+            se:add(e).
+        }
+    }
+
+    list parts in plist.
+    local stageParts to list().
+    local stageWetMass to 0.
+    local fuel to 0.
+    for p in plist {
+        if p:separatedin <= stageNo - 1 {
+            set stageWetMass to stageWetMass + p:wetmass.
+        }
+        if p:separatedin = stageNo - 1 {
+            stageParts:add(p).
+            set fuel to fuel + p:wetmass - p:drymass.
+        }
+    }
+    local stageDryMass to stageWetMass - fuel.
+    print "Number: " + stageNo.
+    print "wetMass: " + stageWetMass.
+    print "dryMass: " + stageDrymass.
+    print "fuelu: " + fuel.
+    local ve to se[0]:visp*g0.
+    print "ve: " + ve.
+    local F to se[0]:possiblethrustat(0.0).
+    print "F: " + F.
+    local q to F/ve.
+    print "q: " + q.
+    local dv to ve*ln(stageWetMass/stageDryMass).
+    print "dv: " + dv.
+    print "t: " + ((stageWetMass - (stageWetMass/(constant:e^(dv/ve))))/q).
+}
+
 function exNexNd {
     print "executing Node".
     set nd to nextnode.
@@ -76,12 +121,12 @@ function exNexNd {
     set ship:control:pilotmainthrottle to 0.
 }
 
-function circDv {
-    set y to obt:body:mu.
-    set r to obt:apoapsis + obt:body:radius.
-    set a to obt:semimajoraxis.
-    set va to sqrt(y*(2/r - 1/a)).
-    set vf to sqrt(y/r).
+function dvCirc {
+    local y to obt:body:mu.
+    local r to obt:apoapsis + obt:body:radius.
+    local a to obt:semimajoraxis.
+    local va to sqrt(y*(2/r - 1/a)).
+    local vf to sqrt(y/r).
     return vf - va.
 }
 
@@ -96,9 +141,6 @@ function launchToCirc {
     parameter sma is 85000.
     wait 1.
     clearscreen.
-    
-    set bay to ship:partstitled("Service Bay (1.25m)")[0].
-    set bayModule to bay:getmodule("ModuleAnimateGeneric").
     
     lock throttle to 1.
     stage.
@@ -129,7 +171,11 @@ function launchToCirc {
     tw:cancelwarp.
     wait 1.
     for f in ship:modulesnamed("moduleproceduralfairing") { f:doevent("deploy"). }
-    set nd to node( time:seconds+eta:apoapsis, 0, 0, circdv() ).
+    wait 1.
+    panels on.
+    for f in ship:partsTagged("mainComm") { f:getModule("ModuleDeployableAntenna"):doaction("extend antenna", true). }
+
+    set nd to node( time:seconds+eta:apoapsis, 0, 0, dvCirc() ).
     add nd.
     exNexNd().
     remove nd.
@@ -177,8 +223,7 @@ function land {
     print status.
 }
 
-function go {
-    //logShip().
+function goSomeWhereOnKerbin {
     launchToCirc().
     deorbit().
     land().
@@ -187,5 +232,42 @@ function go {
     set current to AG1.
     wait until AG1 <> current.
     print "welcome back".
+}
+
+function dvKSOTrans {
+    local y to obt:body:mu.
+    local a to obt:semimajoraxis. // == radius because i assume circular starting orbit
+    local as to 346333000. //sma synchronous
+    local at to (a + as)/2. //sma transfer
+    local va to sqrt(y/a). //velocity of starting orbit
+    local vf to sqrt(y*(2/a - 1/at)). //velocity of transfer orbit at periapse
+    return vf - va.
+}
+
+function dvKSOIns {
+    local y to obt:body:mu.
+    local as to 346333000. //sma synchronous
+    local at to (a + as)/2. //sma transfer
+    local va to sqrt(y*(2/as - 1/at)). //velocity of transfer orbit at apoapse
+    local vf to sqrt(y/as). // velocity of KSO
+    return vf - va.
+}
+
+function KSOat {
+    parameter longitude is 0.
+
+}
+
+function go {
+    stageDv(0).
+    stageDv(1).
+    stageDv(2).
+    //logShip().
+    //launchToCirc().
+    //if status = "prelaunch" {
+    //    goSomeWhereOnKerbin().
+    //    return.
+    //}
+    //print "not sure what you want me to do".
 }
 

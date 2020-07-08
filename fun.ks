@@ -47,52 +47,91 @@ function burnDuration {
     parameter dv.
 }
 
-function stageDv {
-    parameter stageNo.
+function burnTime {
+    parameter burn.
     local g0 to 9.80665.
+    local stagecount to stage:number.
+    if status = "prelaunch" {
+        set stagecount to stagecount - 1.
+    }
 
-    list engines in elist.
-    local se to list().
-    for e in elist {
-        if e:stage = stageNo {
-            se:add(e).
-        }
+    local engines to list().
+    local mass to list().
+    local fuel to list(). 
+    local drymass to list().
+    local ve to list().
+    local F to list().
+    local q to list().
+    local dv to list().
+    local t to list().
+    for s in range(0, stagecount + 1) {
+        engines:add(list()).
+        mass:add(0).
+        fuel:add(0). 
+        drymass:add(0).
+        ve:add(0).
+        F:add(0).
+        q:add(0).
+        dv:add(0).
+        t:add(0).
     }
 
     list parts in plist.
-    local stageParts to list().
-    local stageWetMass to 0.
-    local fuel to 0.
     for p in plist {
-        if p:separatedin <= stageNo - 1 {
-            set stageWetMass to stageWetMass + p:wetmass.
-        }
-        if p:separatedin = stageNo - 1 {
-            stageParts:add(p).
-            set fuel to fuel + p:wetmass - p:drymass.
+        for s in range(0, stagecount + 1){
+            if p:separatedin <= s - 1 {
+                set mass[s] to mass[s] + p:mass.
+            }
+            if p:separatedin = s - 1 {
+                set fuel[s] to fuel[s] + p:mass - p:drymass.
+            }
         }
     }
-    local stageDryMass to stageWetMass - fuel.
-    print "Number: " + stageNo.
-    print "wetMass: " + stageWetMass.
-    print "dryMass: " + stageDrymass.
-    print "fuelu: " + fuel.
-    local ve to se[0]:visp*g0.
-    print "ve: " + ve.
-    local F to se[0]:possiblethrustat(0.0).
-    print "F: " + F.
-    local q to F/ve.
-    print "q: " + q.
-    local dv to ve*ln(stageWetMass/stageDryMass).
-    print "dv: " + dv.
-    print "t: " + ((stageWetMass - (stageWetMass/(constant:e^(dv/ve))))/q).
+
+    for s in range(0, stagecount + 1) {
+        list engines in elist.
+        for e in elist {
+            if e:stage = s {
+                engines[s]:add(e).
+            }
+        }
+        //TODO if engines[s]:length > 0
+        // Ion engine circdv??
+
+        set dryMass[s] to mass[s] - fuel[s].
+        set ve[s] to engines[s][0]:visp*g0.
+        set F[s] to engines[s][0]:possiblethrustat(0.0).
+        set q[s] to F[s]/ve[s].
+        set dv[s] to ve[s]*ln(mass[s]/dryMass[s]).
+        set t[s] to ((mass[s] - (mass[s]/(constant:e^(dv[s]/ve[s]))))/q[s]).
+        print "Number: " + s.
+        print "mass: " + mass[s].
+        print "dryMass: " + drymass[s].
+        print "fuel: " + fuel[s].
+        print "ve: " + ve[s].
+        print "F: " + F[s].
+        print "q: " + q[s].
+        print "dv: " + dv[s].
+        print "t: " + t[s].
+    }
+
+    local i to 0.
+    local tBurn to 0.
+    until burn - dv[i] < 0 {
+        set burn to burn - dv[i].
+        set tBurn to tBurn + t[s].
+        set i to i + 1.
+    }
+    set tBurn to tBurn + ((mass[i] - (mass[i]/(constant:e^(burn/ve[i]))))/q[i]).
+    print "calculatedBurnTime: " + tBurn.
+    return tBurn.
 }
 
 function exNexNd {
     print "executing Node".
     set nd to nextnode.
     set max_acc to maxthrust/ship:mass.
-    set burn_duration to nd:deltav:mag/max_acc.
+    set burn_duration to burnTime(nd:deltav:mag).
     set tw to kuniverse:timewarp.
     set warpmode to "rails".
     tw:warpto(time:seconds + nd:eta - (burn_duration/2 + 15)).
@@ -139,6 +178,7 @@ function logShip {
 
 function launchToCirc {
     parameter sma is 85000.
+    parameter stageBeforeCircBurn is false.
     wait 1.
     clearscreen.
     
@@ -172,8 +212,13 @@ function launchToCirc {
     wait 1.
     for f in ship:modulesnamed("moduleproceduralfairing") { f:doevent("deploy"). }
     wait 1.
+    if stageBeforeCircBurn {
+        stage.
+        wait 1.
+    }
     panels on.
     for f in ship:partsTagged("mainComm") { f:getModule("ModuleDeployableAntenna"):doaction("extend antenna", true). }
+    wait 1.
 
     set nd to node( time:seconds+eta:apoapsis, 0, 0, dvCirc() ).
     add nd.
@@ -237,7 +282,7 @@ function goSomeWhereOnKerbin {
 function dvKSOTrans {
     local y to obt:body:mu.
     local a to obt:semimajoraxis. // == radius because i assume circular starting orbit
-    local as to 346333000. //sma synchronous
+    local as to 3463330. //sma synchronous
     local at to (a + as)/2. //sma transfer
     local va to sqrt(y/a). //velocity of starting orbit
     local vf to sqrt(y*(2/a - 1/at)). //velocity of transfer orbit at periapse
@@ -246,7 +291,8 @@ function dvKSOTrans {
 
 function dvKSOIns {
     local y to obt:body:mu.
-    local as to 346333000. //sma synchronous
+    local a to obt:semimajoraxis. // == radius because i assume circular starting orbit
+    local as to 3463330. //sma synchronous
     local at to (a + as)/2. //sma transfer
     local va to sqrt(y*(2/as - 1/at)). //velocity of transfer orbit at apoapse
     local vf to sqrt(y/as). // velocity of KSO
@@ -254,20 +300,45 @@ function dvKSOIns {
 }
 
 function KSOat {
-    parameter longitude is 0.
-
+    parameter lngt is 0.
+    print lngt.
+    local wSS to 360/obt:body:rotationperiod.
+    local a to obt:semimajoraxis.
+    local as to 3463330. //sma synchronous
+    local at to (as + a)/2. //sma transfer
+    local pi to constant:pi.
+    local y to obt:body:mu.
+    local p to sqrt((4*pi^2*a^3)/y).
+    local w to 360/p.
+    local lng to geoposition:lng.
+    local pt to sqrt((4*pi^2*at^3)/y).
+    local ps to sqrt((4*pi^2*as^3)/y).
+    //print ps.
+    //print obt:body:rotationperiod.
+    local alpha to 180 - (wSS*pt)/2.
+    local t to (lngt - lng - alpha)/(w - wSS).
+    print t.
+    print alpha.
+    if t < 0 {
+        set t to (lngt - lng - alpha + 360 )/(w - wSS).
+    }
+    set nd to node( time:seconds + t, 0, 0, dvKSOTrans() ).
+    add nd.
+    exNexNd().
 }
 
 function go {
-    stageDv(0).
-    stageDv(1).
-    stageDv(2).
+    KSOat(-74).
+    //print burnTime(1000).
+    //stageDv(0).
     //logShip().
-    //launchToCirc().
+    //launchToCirc(85000, true).
     //if status = "prelaunch" {
     //    goSomeWhereOnKerbin().
     //    return.
     //}
     //print "not sure what you want me to do".
 }
+
+KSOat(-74).
 

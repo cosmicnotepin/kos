@@ -104,15 +104,15 @@ function burnTime {
         set q[s] to F[s]/ve[s].
         set dv[s] to ve[s]*ln(mass[s]/dryMass[s]).
         set t[s] to ((mass[s] - (mass[s]/(constant:e^(dv[s]/ve[s]))))/q[s]).
-        print "Number: " + s.
-        print "mass: " + mass[s].
-        print "dryMass: " + drymass[s].
-        print "fuel: " + fuel[s].
-        print "ve: " + ve[s].
-        print "F: " + F[s].
-        print "q: " + q[s].
-        print "dv: " + dv[s].
-        print "t: " + t[s].
+        //print "Number: " + s.
+        //print "mass: " + mass[s].
+        //print "dryMass: " + drymass[s].
+        //print "fuel: " + fuel[s].
+        //print "ve: " + ve[s].
+        //print "F: " + F[s].
+        //print "q: " + q[s].
+        //print "dv: " + dv[s].
+        //print "t: " + t[s].
     }
 
     local i to 0.
@@ -129,6 +129,7 @@ function burnTime {
 
 function exNexNd {
     print "executing Node".
+    print "1".
     set nd to nextnode.
     set max_acc to maxthrust/ship:mass.
     set burn_duration to burnTime(nd:deltav:mag).
@@ -136,22 +137,22 @@ function exNexNd {
     set warpmode to "rails".
     tw:warpto(time:seconds + nd:eta - (burn_duration/2 + 15)).
     wait until nd:eta <= (burn_duration/2 + 10).
-    set np to nd:deltav.
+    print "1".
     lock steering to nd:deltav.
     
-    wait until vang(np, ship:facing:vector) < 0.25.
+    wait until vang(nd:deltav, ship:facing:vector) < 0.25.
+    print "2".
     
     wait until nd:eta <= (burn_duration/2).
+    print "3".
     set tset to 0.
     lock throttle to tset.
-    set done to False.
-    set dv0 to nd:deltav.
     until nd:deltav:mag < 0.1
     {
         set max_acc to maxthrust/ship:mass.
         set tset to min(nd:deltav:mag/max_acc, 1).
     }
-    print "End burn, remain dv " + round(nd:deltav:mag,1) + "m/s, vdot: " + round(vdot(dv0, nd:deltav),1).
+    print "End burn, remain dv " + round(nd:deltav:mag,1) + "m/s".
     lock throttle to 0.
     unlock steering.
     unlock throttle.
@@ -220,12 +221,14 @@ function launchToCirc {
     for f in ship:partsTagged("mainComm") { f:getModule("ModuleDeployableAntenna"):doaction("extend antenna", true). }
     wait 1.
 
+    unlock steering.
+    unlock throttle.
     set nd to node( time:seconds+eta:apoapsis, 0, 0, dvCirc() ).
     add nd.
     exNexNd().
     remove nd.
     
-    set ship:control:pilotmainthrottle to 0.
+    //set ship:control:pilotmainthrottle to 0.
 }
 
 function deorbit {
@@ -291,17 +294,16 @@ function dvKSOTrans {
 
 function dvKSOIns {
     local y to obt:body:mu.
-    local a to obt:semimajoraxis. // == radius because i assume circular starting orbit
+    local at to obt:semimajoraxis. // assuming to be on transfer orbit during this calculation
     local as to 3463330. //sma synchronous
-    local at to (a + as)/2. //sma transfer
-    local va to sqrt(y*(2/as - 1/at)). //velocity of transfer orbit at apoapse
+    local r to obt:apoapsis + obt:body:radius.
+    local va to sqrt(y*(2/r - 1/at)). //velocity of transfer orbit at apoapse
     local vf to sqrt(y/as). // velocity of KSO
     return vf - va.
 }
 
 function KSOat {
     parameter lngt is 0.
-    print lngt.
     local wSS to 360/obt:body:rotationperiod.
     local a to obt:semimajoraxis.
     local as to 3463330. //sma synchronous
@@ -313,32 +315,47 @@ function KSOat {
     local lng to geoposition:lng.
     local pt to sqrt((4*pi^2*at^3)/y).
     local ps to sqrt((4*pi^2*as^3)/y).
-    //print ps.
-    //print obt:body:rotationperiod.
     local alpha to 180 - (wSS*pt)/2.
     local t to (lngt - lng - alpha)/(w - wSS).
-    print t.
-    print alpha.
     if t < 0 {
         set t to (lngt - lng - alpha + 360 )/(w - wSS).
     }
     set nd to node( time:seconds + t, 0, 0, dvKSOTrans() ).
     add nd.
     exNexNd().
+    remove nd.
+    print "4".
+    set nd to node( time:seconds + eta:apoapsis, 0, 0, dvKSOIns() ).
+    add nd.
+    exNexNd().
+    remove nd.
+    print "5".
+    set tset to 0.
+    lock throttle to tset.
+    if obt:semimajoraxis > as {
+        lock steering to retrograde.
+        wait until vang(retrograde:vector, ship:facing:vector) < 0.25.
+        until obt:semimajoraxis < (as + 0.5) {
+            set tset to min(abs(obt:semimajoraxis - as)/100000, 1).
+        }
+    } else {
+        lock steering to prograde.
+        wait until vang(prograde:vector, ship:facing:vector) < 0.25.
+        until obt:semimajoraxis > (as - 0.5) {
+            set tset to min(abs(obt:semimajoraxis - as)/100000, 1).
+        }
+    }
+    print "at KSO at: " + lngt.
 }
 
 function go {
+
+    launchToCirc(85000, true).
     KSOat(-74).
-    //print burnTime(1000).
-    //stageDv(0).
     //logShip().
-    //launchToCirc(85000, true).
     //if status = "prelaunch" {
     //    goSomeWhereOnKerbin().
     //    return.
     //}
     //print "not sure what you want me to do".
 }
-
-KSOat(-74).
-

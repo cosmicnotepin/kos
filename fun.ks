@@ -16,21 +16,33 @@ function logShip {
 function go {
     print "I HAVE CONTROL_".
 
-    launchToCirc(85000, true).
     print "set target and trigger AG1".
     set current to AG1.
     wait until AG1 <> current.
-    //matchInclination(target).
-    //KSOat(120-14).
-    //if status = "prelaunch" {
-    //    goSomeWhereOnKerbin().
-    //    return.
-    //}
+    launchToCirc(85000, true).
+    rendezvous(target).
     print "MISSION".
     print "COMPL_".
 }
 
+//rendezvousAtNextApoapsis(target).
 //rendezvousSetup(target).
 //matchInclination(target).
-rendezvous(target).
+//rendezvous(target).
+//approach(target).
+//toTargetAtSpeed(target, 0).
+//logShip().
 
+//warpToBetterAlignment(target).
+//print "waiting for message".
+//when not ship:messages:empty then {
+//      set received to ship:messages:pop.
+//      print "sent by " + received:sender:name + " at " + received:sentat.
+//      print received:content.
+//      rcs off.
+//      sas off.
+//      lock steering to received:sender:position.
+//      print "looking at you!".
+//}
+//
+//wait until 1<0.

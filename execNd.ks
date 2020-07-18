@@ -80,12 +80,11 @@ function burnTime {
 
 function execNd {
     parameter nd.
-    print "executing Node".
     add nd.
     lock steering to nd:deltav.  
     wait until vang(nd:deltav, ship:facing:vector) < 0.25.
-    set max_acc to maxthrust/ship:mass.
-    set burn_duration to burnTime(nd:deltav:mag).
+    local max_acc to maxthrust/ship:mass.
+    local burn_duration to burnTime(nd:deltav:mag).
     //set tw to kuniverse:timewarp.
     //wait 1.
     warpWait(time:seconds + nd:eta - (burn_duration/2 + 15)).
@@ -96,18 +95,17 @@ function execNd {
     wait until vang(nd:deltav, ship:facing:vector) < 0.25.
     
     wait until nd:eta <= (burn_duration/2).
-    set tset to 0.
+    local tset to 0.
     lock throttle to tset.
     until nd:deltav:mag < 0.1
     {
         set max_acc to maxthrust/ship:mass.
         set tset to min(nd:deltav:mag/max_acc, 1).
     }
-    print "End burn, remain dv " + round(nd:deltav:mag,1) + "m/s".
     lock throttle to 0.
     unlock steering.
     unlock throttle.
-    wait 1.
-    remove nd.
     set ship:control:pilotmainthrottle to 0.
+    remove nd.
+    wait 1.
 }

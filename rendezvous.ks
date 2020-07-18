@@ -5,6 +5,7 @@ run once warp.
 
 function matchApoapsis {
     Parameter tar.
+    print "matchApoapsis()".
   
     local perSEta is time:seconds + eta:periapsis.
     local perTEta is time:seconds + timeToTrueAnomaly(tar, 0).
@@ -28,10 +29,6 @@ function matchApoapsis {
   
     local timeTargetPeriapsis is timeToTrueAnomaly(ship, trueAnomalyTargetPer).
     local curRadTarPer is radiusAtTrueAnomaly(ship, trueAnomalyTargetPer).
-    print "curRadTarPer: " + curRadTarPer .
-
-    print "tar:orbit:apoapsis: " + tar:orbit:apoapsis.
-    print "targetSMA: " + ((curRadTarPer + tar:orbit:apoapsis)/2 + body:radius).
     local dv is visViva(curRadTarPer, ((curRadTarPer + tar:orbit:apoapsis + body:radius)/2)).
     local nd is Node(time:seconds + timeTargetPeriapsis, 0, 0, dv).
     execNd(nd).
@@ -40,6 +37,7 @@ function matchApoapsis {
 function warpToBetterAlignment {
     parameter tar.
     parameter maxWaitOrbits is 10.
+    print "warpToBetterAlignment()".
     local theWait is 0.
     local theAngle is 180.
     from {local o is 0.} until o = maxWaitOrbits step {set o to o + 1.} do {
@@ -49,11 +47,11 @@ function warpToBetterAlignment {
         local vecSTCrs is vcrs(vecS, vecT).
         local vecSVCrs is vcrs(body:position, velocity:orbit).
         local cmp to 0.
-        if obt:periapsis < tar:obt:periapsis {
-            set cmp to vdot(vecSTCrs, vecSVCrs) < 0.
-        } else {
-            set cmp to vdot(vecSTCrs, vecSVCrs) > 0.
-        }
+        //if obt:periapsis < tar:obt:periapsis {
+        //    set cmp to vdot(vecSTCrs, vecSVCrs) < 0.
+        //} else {
+        set cmp to vdot(vecSTCrs, vecSVCrs) > 0. //always lead, so that we never lower our periapse to "get an encounter"
+        //}
         if vang(vecS,vecT) < theAngle and cmp {
             set theAngle to vang(vecS, vecT).
             set theWait to apoTime.
@@ -64,10 +62,11 @@ function warpToBetterAlignment {
 
 function rendezvousAtNextApoapsis {
     parameter tar.
+    print "rendezvousAtNextApoapsis()".
     local p to timeToTrueAnomaly(tar,180).
-    if p < 600 {
-        set p to p + tar:obt:period.
-    }
+    //if p < 600 {
+       set p to p + tar:obt:period.
+    //}
     local tarApoVec to positionat(tar, time:seconds + p) - body:position.
     local trueAnomTarApo to obt:trueanomaly + vang(tarApoVec, ship:position - body:position).
     local timeToTarApo to timeToTrueAnomaly(ship, trueAnomTarApo).
@@ -86,25 +85,128 @@ function rendezvousAtNextApoapsis {
     warpWait(theWait).
 }
 
-function matchVelocity {
+function toTargetAtSpeed {
     parameter tar.
-    local vec is (tar:velocity:orbit - ship:velocity:orbit).
-    local nd is nodeFromVector(vec).
-    execNd(nd).  
+    parameter speed.
+    print "toTargetAtSpeed()".
+    local tarTarVelVec is (tar:position - ship:position):normalized * speed.
+    local curTarVelVec is (ship:velocity:orbit - tar:velocity:orbit).
+    local nd to nodeFromVector(tarTarVelVec - curTarVelVec).
+    execNd(nd).
 }
+
+function armGrapplingDevice {
+    print"armGrapplingDevice()".
+    local p to ship:partsnamed("GrapplingDevice")[0].
+    local m to p:getmodule("ModuleAnimateGeneric").
+    if m:hasevent("arm") {
+        m:doevent("arm").
+    } else {
+        print "arming GrapplingDevice failed".
+    }
+}
+
+function send {
+    parameter tar.
+    parameter m.
+    print "send()".
+    set c to tar:connection.
+    if c:sendmessage(m) {
+          print "message sent!".
+    }
+}
+
+function approach {
+    parameter tar.
+    print "approach()".
+
+    local lock dist to (tar:position - ship:position):mag.
+    local speed to 50.
+    local waitDist to 3000.
+    local wf to 2.
+    until dist < 500 { //safety distance, overridden by break.
+        if dist < 3000 {
+            set speed to 30.
+            set waitDist to 1500.
+            set wf to 2.
+        }
+        if dist < 1500  {
+            set speed to 20.
+            set waitDist to 1000.
+            set wf to 1.
+        }
+        if dist < 1000 {
+            set speed to 10.
+            set waitDist to 1000.
+            set wf to 0.
+        }
+        toTargetAtSpeed(tar, speed).
+        set warp to wf.
+        wait until dist < waitDist.
+        set warp to 0.
+        wait until kuniverse:timewarp:rate = 1.
+        if speed = 10 {
+            break.
+        }
+    }
+    //toTargetAtSpeed(tar, 0).  
+
+    lock steering to tar:position.
+    wait until vang(tar:position, ship:facing:vector) < 0.25.
+    armGrapplingDevice().
+    RCS on.
+    local lock tarVelVec to (ship:velocity:orbit - tar:velocity:orbit).
+
+    send(tar, "lookAtMe").
+
+    local forePid to pidloop().
+    set forePid:setpoint to 10.
+    set forePid:minoutput to -1.
+    set forePid:maxoutput to 1.
+    local lock foreVel to vdot(tarVelVec, ship:facing * v(0,0,1)).
+
+    local starPid to pidloop().
+    set starPid:setpoint to 0.
+    set starPid:minoutput to -1.
+    set starPid:maxoutput to 1.
+    local lock starVel to vdot(tarVelVec, ship:facing * v(1,0,0)).
+
+    local topPid to pidloop().
+    set topPid:setpoint to 0.
+    set topPid:minoutput to -1.
+    set topPid:maxoutput to 1.
+    local lock topVel to vdot(tarVelVec, ship:facing * v(0,1,0)).
+
+    local grappleModule to ship:partsnamed("GrapplingDevice")[0]:getmodule("ModuleGrappleNode").
+    until grappleModule:hasevent("release") {
+        set forePid:setpoint to min(dist/10 + 0.1, 10).
+        set ship:control:fore to forePid:update(time:seconds, foreVel).
+        set ship:control:starboard to starPid:update(time:seconds, starVel).
+        set ship:control:top to topPid:update(time:seconds, topVel).
+        wait 0.
+    }
+
+    set ship:control:neutralize to true.
+    unlock steering.
+    rcs off.
+    sas off.
+}
+
 
 function rendezvous {
     parameter tar.
     parameter maxWaitOrbits is 10.
+    print "rendevous()".
 
-    //matchInclination(tar).
+    matchInclination(tar).
 
-    //matchApoapsis(tar).
+    matchApoapsis(tar).
 
     warpToBetterAlignment(tar, maxWaitOrbits).
 
     rendezvousAtNextApoapsis(tar).
 
-    matchVelocity(tar).
-
+    approach(tar).  
 }
+
+

@@ -1,13 +1,5 @@
 run once execNd.
-
-function dvCirc {
-    local y to obt:body:mu.
-    local r to obt:apoapsis + obt:body:radius.
-    local a to obt:semimajoraxis.
-    local va to sqrt(y*(2/r - 1/a)).
-    local vf to sqrt(y/r).
-    return vf - va.
-}
+run once other.
 
 function launchToCirc {
     parameter sma is 85000.
@@ -53,10 +45,6 @@ function launchToCirc {
 
     unlock steering.
     unlock throttle.
-    set nd to node( time:seconds+eta:apoapsis, 0, 0, dvCirc() ).
-    add nd.
-    exNexNd().
-    remove nd.
-    
-    //set ship:control:pilotmainthrottle to 0.
+    set nd to node( time:seconds+eta:apoapsis, 0, 0, visViva(obt:apoapsis + obt:body:radius, obt:apoapsis + obt:body:radius)).
+    execNd(nd).
 }

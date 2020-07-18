@@ -3,6 +3,8 @@ run once launch.
 run once kso.
 run once science.
 run once execNd.
+run once rendezvous.
+run once other.
 
 function logShip {
     FOR P IN SHIP:PARTS {
@@ -14,8 +16,12 @@ function logShip {
 function go {
     print "I HAVE CONTROL_".
 
-    matchInclination(target).
-    //launchToCirc(85000, true).
+    launchToCirc(85000, true).
+    print "set target and trigger AG1".
+    set current to AG1.
+    wait until AG1 <> current.
+    //matchInclination(target).
+    //KSOat(120-14).
     //if status = "prelaunch" {
     //    goSomeWhereOnKerbin().
     //    return.
@@ -24,6 +30,7 @@ function go {
     print "COMPL_".
 }
 
-go().
-
+//rendezvousSetup(target).
+//matchInclination(target).
+rendezvous(target).
 

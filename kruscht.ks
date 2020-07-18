@@ -7,9 +7,7 @@ function deorbit {
     set va to velocity:orbit:mag.
     set vf to sqrt(y*(2/r - 1/a)).
     set nd to node( time:seconds + 800, 0, 0, -(va - vf) ).
-    add nd.
-    exNexNd().
-    remove nd.
+    execNd(nd).
 }
 
 function land {

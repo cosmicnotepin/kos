@@ -78,16 +78,20 @@ function burnTime {
     return tBurn.
 }
 
-function exNexNd {
+function execNd {
+    parameter nd.
     print "executing Node".
-    set nd to nextnode.
+    add nd.
+    lock steering to nd:deltav.  
+    wait until vang(nd:deltav, ship:facing:vector) < 0.25.
     set max_acc to maxthrust/ship:mass.
     set burn_duration to burnTime(nd:deltav:mag).
-    set tw to kuniverse:timewarp.
-    set warpmode to "rails".
-    tw:warpto(time:seconds + nd:eta - (burn_duration/2 + 15)).
-    wait until nd:eta <= (burn_duration/2 + 10).
-    lock steering to nd:deltav.
+    //set tw to kuniverse:timewarp.
+    //wait 1.
+    warpWait(time:seconds + nd:eta - (burn_duration/2 + 15)).
+    //set warpmode to "rails".
+    //tw:warpto(time:seconds + nd:eta - (burn_duration/2 + 15)).
+    //wait until nd:eta <= (burn_duration/2 + 10).
     
     wait until vang(nd:deltav, ship:facing:vector) < 0.25.
     

@@ -39,13 +39,9 @@ function KSOat {
         set t to (lngt - lng - alpha + 360 )/(w - wSS).
     }
     set nd to node( time:seconds + t, 0, 0, dvKSOTrans() ).
-    add nd.
-    exNexNd().
-    remove nd.
+    execNd(nd).
     set nd to node( time:seconds + eta:apoapsis, 0, 0, dvKSOIns() ).
-    add nd.
-    exNexNd().
-    remove nd.
+    execNd(nd).
     set tset to 0.
     lock throttle to tset.
     if obt:semimajoraxis > as {

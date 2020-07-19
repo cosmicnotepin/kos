@@ -74,7 +74,6 @@ function burnTime {
         set i to i + 1.
     }
     set tBurn to tBurn + ((mass[i] - (mass[i]/(constant:e^(burn/ve[i]))))/q[i]).
-    print "calculatedBurnTime: " + tBurn.
     return tBurn.
 }
 
@@ -85,12 +84,7 @@ function execNd {
     wait until vang(nd:deltav, ship:facing:vector) < 0.25.
     local max_acc to maxthrust/ship:mass.
     local burn_duration to burnTime(nd:deltav:mag).
-    //set tw to kuniverse:timewarp.
-    //wait 1.
     warpWait(time:seconds + nd:eta - (burn_duration/2 + 15)).
-    //set warpmode to "rails".
-    //tw:warpto(time:seconds + nd:eta - (burn_duration/2 + 15)).
-    //wait until nd:eta <= (burn_duration/2 + 10).
     
     wait until vang(nd:deltav, ship:facing:vector) < 0.25.
     

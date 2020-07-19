@@ -11,18 +11,11 @@ function matchApoapsis {
     local perTEta is time:seconds + timeToTrueAnomaly(tar, 0).
   
     local vecS is positionat(ship, perSEta)-ship:body:position.
-    //local vecd1 is vecdraw(ship:body:position, vec1 , red, "per1", 1.0, false, 0.2).
-    //set vecd1:startupdater to {return ship:body:position.}.
-  
     local vecT is positionat(target, perTEta)-ship:body:position.
-    //local vecd2 is vecdraw(ship:body:position, vec2, red, "per2", 1.0, false, 0.2).
-    //set vecd2:startupdater to {return body:position.}.
-  
     local TrueAnomalyTargetPer is "x".
   
     if vdot(vcrs(vecs, vect), v(0,1,0)) > 0 {
         set trueAnomalyTargetPer to 360-vang(vecS,vecT).
-        //HUDtext("POS", 30, 2, 30, white, true).
     } else {
         set trueAnomalyTargetPer to vang(vecS,vecT).
     }
@@ -47,11 +40,7 @@ function warpToBetterAlignment {
         local vecSTCrs is vcrs(vecS, vecT).
         local vecSVCrs is vcrs(body:position, velocity:orbit).
         local cmp to 0.
-        //if obt:periapsis < tar:obt:periapsis {
-        //    set cmp to vdot(vecSTCrs, vecSVCrs) < 0.
-        //} else {
-        set cmp to vdot(vecSTCrs, vecSVCrs) > 0. //always lead, so that we never lower our periapse to "get an encounter"
-        //}
+        set cmp to vdot(vecSTCrs, vecSVCrs) > 0. //always lead, so that we never lower our periapse to get an encounter
         if vang(vecS,vecT) < theAngle and cmp {
             set theAngle to vang(vecS, vecT).
             set theWait to apoTime.
@@ -64,9 +53,7 @@ function rendezvousAtNextApoapsis {
     parameter tar.
     print "rendezvousAtNextApoapsis()".
     local p to timeToTrueAnomaly(tar,180).
-    //if p < 600 {
-       set p to p + tar:obt:period.
-    //}
+    set p to p + tar:obt:period. //we are leading and about 10 mins from apoapsis, so target is too
     local tarApoVec to positionat(tar, time:seconds + p) - body:position.
     local trueAnomTarApo to obt:trueanomaly + vang(tarApoVec, ship:position - body:position).
     local timeToTarApo to timeToTrueAnomaly(ship, trueAnomTarApo).
@@ -95,28 +82,7 @@ function toTargetAtSpeed {
     execNd(nd).
 }
 
-function armGrapplingDevice {
-    print"armGrapplingDevice()".
-    local p to ship:partsnamed("GrapplingDevice")[0].
-    local m to p:getmodule("ModuleAnimateGeneric").
-    if m:hasevent("arm") {
-        m:doevent("arm").
-    } else {
-        print "arming GrapplingDevice failed".
-    }
-}
-
-function send {
-    parameter tar.
-    parameter m.
-    print "send()".
-    set c to tar:connection.
-    if c:sendmessage(m) {
-          print "message sent!".
-    }
-}
-
-function approach {
+function approachMainEngine {
     parameter tar.
     print "approach()".
 
@@ -149,8 +115,33 @@ function approach {
             break.
         }
     }
-    //toTargetAtSpeed(tar, 0).  
+}
 
+function armGrapplingDevice {
+    print"armGrapplingDevice()".
+    local p to ship:partsnamed("GrapplingDevice")[0].
+    local m to p:getmodule("ModuleAnimateGeneric").
+    if m:hasevent("arm") {
+        m:doevent("arm").
+    } else {
+        print "arming GrapplingDevice failed".
+    }
+}
+
+function send {
+    parameter tar.
+    parameter m.
+    print "send()".
+    set c to tar:connection.
+    if c:sendmessage(m) {
+          print "message sent!".
+    }
+}
+
+function dockRCS {
+    parameter tar.
+
+    local lock dist to (tar:position - ship:position):mag.
     lock steering to tar:position.
     wait until vang(tar:position, ship:facing:vector) < 0.25.
     armGrapplingDevice().
@@ -206,7 +197,10 @@ function rendezvous {
 
     rendezvousAtNextApoapsis(tar).
 
-    approach(tar).  
+    approachMainEngine(tar).  
+
+    dockRCS(tar).
+
 }
 
 

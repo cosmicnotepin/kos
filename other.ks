@@ -5,9 +5,6 @@ function visViva {
     local r to burnRadius.
     local a to obt:semimajoraxis.
     local va to sqrt(y*(2/r - 1/a)).
-    //print "targetSma: " + targetSma.
-    //print "r : " + r .
-    //print "y: " + y.
     local vf to sqrt(y*(2/r - 1/targetSma)).
     return vf - va.
 }

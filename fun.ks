@@ -24,25 +24,3 @@ function go {
     print "MISSION".
     print "COMPL_".
 }
-
-//rendezvousAtNextApoapsis(target).
-//rendezvousSetup(target).
-//matchInclination(target).
-//rendezvous(target).
-//approach(target).
-//toTargetAtSpeed(target, 0).
-//logShip().
-
-//warpToBetterAlignment(target).
-//print "waiting for message".
-//when not ship:messages:empty then {
-//      set received to ship:messages:pop.
-//      print "sent by " + received:sender:name + " at " + received:sentat.
-//      print received:content.
-//      rcs off.
-//      sas off.
-//      lock steering to received:sender:position.
-//      print "looking at you!".
-//}
-//
-//wait until 1<0.

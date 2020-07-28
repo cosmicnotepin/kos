@@ -10,7 +10,7 @@ function doScience {
 
     bays on.
     wait 2.
-    set experimentTypes to list("sensorThermometer", "sensorBarometer", "probeCoreOcto.v2", "science.module", "GooExperiment", "sensorAtmosphere", "sensorGravimeter", "sensorAccelerometer", "landerCabinSmall").
+    set experimentTypes to list("sensorThermometer", "sensorBarometer", "science.module", "GooExperiment", "sensorAtmosphere", "sensorGravimeter", "sensorAccelerometer", "landerCabinSmall").
     for type in experimentTypes {
         print type.
         if blacklist:contains(type) {
@@ -19,16 +19,15 @@ function doScience {
         }
         for part in ship:partsnamed(type) {
             set sm to part:getmodule("ModuleScienceExperiment").
-            if sm:deployed or sm:inoperable {
-                continue.
+            if not (sm:deployed or sm:inoperable) {
+                sm:deploy.
+                local ct to time:seconds.
+                wait until sm:hasdata or time:seconds > ct + 5.
+                if transmit and sm:hasdata {
+                    sm:transmit.
+                }
+                break.
             }
-            sm:deploy.
-            local ct to time:seconds.
-            wait until sm:hasdata or time:seconds > ct + 5.
-            if transmit and sm:hasdata {
-                sm:transmit.
-            }
-            break.
         } 
     }
 

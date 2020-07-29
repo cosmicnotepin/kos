@@ -25,3 +25,13 @@ Function nodeFromVector {
   return node(nodeTime,nodeRadial,nodeNormal,nodePrograde).
 }
 
+function gh {
+    return constant:G *((ship:body:mass)/((ship:altitude + body:radius)^2)).
+}
+
+function fgh {
+    return ship:mass*gh().
+}
+
+//local vd to vecdraw({return ship:position.}, {return steering:forevector*20.}).
+//set vd:show to true.

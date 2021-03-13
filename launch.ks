@@ -2,26 +2,32 @@ run once execNd.
 run once other.
 
 function launchToCirc {
-    parameter sma is 85000.
+    parameter height is 85000.
     parameter stageBeforeCircBurn is false.
+    parameter dir is 90. //direction to launch, 0 for north, 90 for std-east
     wait 1.
     lock throttle to 1.
     stage.
     
     when maxthrust = 0 then {
-      stage.
+        stage.
+        when maxthrust = 0 then {
+            for f in ship:modulesnamed("moduleproceduralfairing") { f:doevent("deploy"). }
+            wait 1.
+            stage.
+        }
     }
     
-    set mysteer to heading(90,90).
+    set mysteer to heading(dir,90).
     lock steering to mysteer.
     
-    until apoapsis > 85000 {
+    until apoapsis > height {
       set vel to velocity:surface:mag.
       if vel < 1350 {
         set pitch to 90 - vel/15.
-        set mysteer to heading(90, pitch).
+        set mysteer to heading(dir, pitch).
       } else if vel >= 1350 {
-        set mysteer to heading(90,0).
+        set mysteer to heading(dir,0).
       }
     }
     

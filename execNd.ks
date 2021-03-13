@@ -1,3 +1,5 @@
+run once warp.
+
 function burnTime {
     parameter burn.
     local g0 to 9.80665.
@@ -33,7 +35,7 @@ function burnTime {
             if p:separatedin <= s - 1 {
                 set mass[s] to mass[s] + p:mass.
             }
-            if p:separatedin = s - 1 {
+            if p:separatedin = s - 1 or ( s = 1 and p:separatedin = -1) {
                 set fuel[s] to fuel[s] + p:mass - p:drymass.
             }
         }
@@ -50,11 +52,19 @@ function burnTime {
         // Ion engine circdv??
 
         set dryMass[s] to mass[s] - fuel[s].
-        set ve[s] to engines[s][0]:visp*g0.
-        set F[s] to engines[s][0]:possiblethrustat(0.0).
-        set q[s] to F[s]/ve[s].
-        set dv[s] to ve[s]*ln(mass[s]/dryMass[s]).
-        set t[s] to ((mass[s] - (mass[s]/(constant:e^(dv[s]/ve[s]))))/q[s]).
+        if engines[s]:length > 0 {
+            set ve[s] to engines[s][0]:visp*g0.
+            set F[s] to engines[s][0]:possiblethrustat(0.0).
+            set q[s] to F[s]/ve[s].
+            set dv[s] to ve[s]*ln(mass[s]/dryMass[s]).
+            set t[s] to ((mass[s] - (mass[s]/(constant:e^(dv[s]/ve[s]))))/q[s]).
+        } else {
+            set ve[s] to 0.
+            set F[s] to 0.
+            set q[s] to 0.
+            set dv[s] to 0.
+            set t[s] to 0.
+        }
         //print "Number: " + s.
         //print "mass: " + mass[s].
         //print "dryMass: " + drymass[s].
@@ -70,7 +80,7 @@ function burnTime {
     local tBurn to 0.
     until burn - dv[i] < 0 {
         set burn to burn - dv[i].
-        set tBurn to tBurn + t[s].
+        set tBurn to tBurn + t[i].
         set i to i + 1.
     }
     set tBurn to tBurn + ((mass[i] - (mass[i]/(constant:e^(burn/ve[i]))))/q[i]).
@@ -78,22 +88,29 @@ function burnTime {
 }
 
 function execNd {
-    parameter nd.
-    add nd.
-    lock steering to nd:deltav.  
-    wait until vang(nd:deltav, ship:facing:vector) < 0.25.
+    parameter nd is 0.
+    if nd = 0 {
+        set nd to nextnode.
+    } else {
+        add nd.
+    }
     local max_acc to maxthrust/ship:mass.
     local burn_duration to burnTime(nd:deltav:mag).
+    lock steering to nd:deltav.  
+    wait until vang(nd:deltav, ship:facing:vector) < 0.25 or nd:eta <= (burn_duration/2).
     warpWait(time:seconds + nd:eta - (burn_duration/2 + 15)).
     
-    wait until vang(nd:deltav, ship:facing:vector) < 0.25.
+    wait until vang(nd:deltav, ship:facing:vector) < 0.25 or nd:eta <= (burn_duration/2).
     
     wait until nd:eta <= (burn_duration/2).
     local tset to 0.
     lock throttle to tset.
     until nd:deltav:mag < 0.1
     {
-        set max_acc to maxthrust/ship:mass.
+        set max_acc to maxthrust/ship:mass.  
+        if max_acc = 0 {
+            break.
+        }
         set tset to min(nd:deltav:mag/max_acc, 1).
     }
     lock throttle to 0.

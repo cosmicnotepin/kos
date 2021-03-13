@@ -5,6 +5,8 @@ function warpWait {
     until kuniverse:timewarp:issettled = true {
       wait 1.
     }
+    set kuniverse:timewarp:mode to "RAILS".
+    wait 1.
     warpto(tarTime).
     wait until time:seconds > tarTime + 5.
 }

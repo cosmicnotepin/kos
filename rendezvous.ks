@@ -203,4 +203,48 @@ function rendezvous {
 
 }
 
+function flyBy {
+    parameter tar.
+    parameter maxWaitOrbits is 10.
+    print "flyBy".
+
+    matchInclination(tar).
+
+    matchApoapsis(tar).
+
+    warpToBetterAlignment(tar, maxWaitOrbits).
+
+    rendezvousAtNextApoapsis(tar).
+}
+
+function circularToCircular {
+    parameter tar.
+    set so to ship:orbit.
+    set mo to tar:orbit.
+    set targetShipAngle to mod( mod( mo:lan + mo:argumentofperiapsis + mo:trueanomaly, 360) - mod(so:lan + so:argumentofperiapsis + so:trueanomaly, 360) + 360, 360).
+    print targetShipAngle.
+    set vStart to sqrt(ship:orbit:body:mu*(2/(ship:altitude + ship:orbit:body:radius) - 1/ship:orbit:semimajoraxis)).
+    print vStart.
+    set vTarget to sqrt(ship:orbit:body:mu*(2/(ship:altitude + ship:orbit:body:radius) - 1/((ship:orbit:semimajoraxis + tar:orbit:semimajoraxis)/2))).
+    print vTarget.
+    set deltaVForTransfer to vTarget - vStart.
+    print deltaVForTransfer.
+    set timeForTransfer to (1/2) * sqrt((4*constant:pi^2*((ship:orbit:semimajoraxis + tar:orbit:semimajoraxis)/2)^3)/ship:orbit:body:mu).
+    print timeForTransfer.
+    set angleTravelledByTargetDuringTransfer to (360/tar:orbit:period)*timeForTransfer.
+    print angleTravelledByTargetDuringTransfer.
+    set angleForTransfer to 180 - angleTravelledByTargetDuringTransfer.
+    print angleForTransfer.
+    set deltaAngularSpeed to (360/ship:orbit:period) - (360/tar:orbit:period).
+    print deltaAngularSpeed.
+    set timeToNextAngleForTransfer to 0.
+    if targetShipAngle > angleForTransfer {
+        set timeToNextAngleForTransfer to (targetShipAngle - angleForTransfer )/deltaAngularSpeed.
+    } else {
+        set timeToNextAngleForTransfer to (360 + targetShipAngle - angleForTransfer )/deltaAngularSpeed.
+    }
+    print timeToNextAngleForTransfer.
+    SET myNode to NODE( TIME:SECONDS+timeToNextAngleForTransfer, 0, 0, deltaVForTransfer ).
+    add myNode.
+}
 

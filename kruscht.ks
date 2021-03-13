@@ -11,6 +11,7 @@ function deorbit {
 }
 
 function land {
+    //tries to stage the deorbit engine and a heatshield
     set warpmode to "rails".
     set warp to 4.
     wait until altitude < 70000.
@@ -30,20 +31,19 @@ function land {
     wait 2.
     kuniverse:timewarp:cancelwarp.
     wait 2.
-    stage.
+    for dcm in ship:modulesnamed("ModuleDecouple") {
+        for ev in dcm:alleventnames {
+            if ev = "jettison heat shield" {
+                dcm:doevent("jettison heat shield").
+            }
+        }
+    }
     wait 2.
     legs on.
+    set warpmode to "physics".
+    set warp to 4.
+    wait until alt:radar < 15.
+    kuniverse:timewarp:cancelwarp.
     wait until status = "splashed" or status = "landed".
     print status.
-}
-
-function goSomeWhereOnKerbin {
-    launchToCirc().
-    deorbit().
-    land().
-    doScience().
-    print "waiting for AG1".
-    set current to AG1.
-    wait until AG1 <> current.
-    print "welcome back".
 }

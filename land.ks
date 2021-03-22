@@ -69,3 +69,9 @@ function landImmediately {
     gear on.
     hover(1,-1).
 }
+
+function aeroBrakeReturn {
+    execNd().
+    lock steering to retrograde.
+    stage.
+}

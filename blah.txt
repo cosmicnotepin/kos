@@ -1,0 +1,1 @@
+solve Power[a + d x, 2] + Power[b + e x, 2] + Power[c + f x, 2] -1 = 0

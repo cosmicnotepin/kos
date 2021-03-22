@@ -32,9 +32,8 @@ function lowOrbitScience {
     print "I HAVE CONTROL_".
     launchToCirc(85000, false, 90).
     doScience().
-    warpWait(time:seconds + (60*60*4) + 60).
     deorbit().
-    land().
+    setCapsuleFree().
     print "MISSION".
     print "COMPL_".
 }
@@ -70,13 +69,13 @@ function munFlyBy {
 }
 
 
-function rendezvous {
+function rendezvousFromLaunchpad {
     print "I HAVE CONTROL_".
 
     print "set target and trigger AG1".
     set current to AG1.
     wait until AG1 <> current.
-    launchToCirc(85000, true).
+    launchToCirc(80000, true).
     rendezvous(target).
     print "MISSION".
     print "COMPL_".
@@ -86,12 +85,19 @@ function go {
     //print "I HAVE CONTROL_".
     //wait 1.
     //munFlyBy().
-    //hover().
+    //hover(10, 50, list(50,60,2)). // move south with 50m/s for 60s, then attempt to land again
+    //hover(10, 50, list(50,60,0)). // move north with 50m/s for 60s, then attempt to land again
+    //hover(1,-1).
+    //launchToCirc(85000, true).
     //launchToCirc().
-    landImmediately().
+    //rendezvous(target).
+    launchToCircVac().//mun
+    //aeroBrakeReturn().
+    //print burnTime(1000).
+    //KSOat(240).
+    //landImmediately().
     //testSuicideHover().
-    ////deorbit().
-    //land().
+    //lowOrbitScience().
     //print "MISSION".
     //print "COMPL_".
 }

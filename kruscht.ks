@@ -47,3 +47,21 @@ function land {
     wait until status = "splashed" or status = "landed".
     print status.
 }
+
+function setCapsuleFree {
+    //tries to stage the deorbit engine and a heatshield
+    set warpmode to "rails".
+    set warp to 4.
+    wait until altitude < 70000.
+    set warpmode to "physics".
+    set warp to 4.
+
+    lock steering to srfretrograde.
+    chutes on.
+    wait 1.
+    stage.
+    wait until alt:radar < 15.
+    kuniverse:timewarp:cancelwarp.
+    wait until status = "splashed" or status = "landed".
+    print status.
+}

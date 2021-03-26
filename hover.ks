@@ -1,217 +1,141 @@
 run once science.
 run once other.
 
+set config:ipu to 2000.
+
 function hover {
     parameter maxVertSpeed is 1.
-    parameter height is alt:radar.
-    //(travelHeight, travelTime, direction[0:N,1:E,2:S,3:W])
-    parameter move is list().
-    parameter target is waypoint("flyhere").
     parameter maxHorizSpeed is 1.
+    parameter height is alt:radar.
+    parameter geoPos is ship:geoposition. //expects a waypoint
     clearscreen.
 
-    local lock posAboveTarget to target:position.// + (target:position - ship:orbit:body:position):normalized * 50.
-    local lock posError to posAboveTarget - ship:position.
-    print posError.
-    //lock height to vdot(posError, posError - ship:body:position).
-
-    local ewPosPid to pidloop().//0.006, (0.012/30), ((0.006*30)/8)).
-    set ewPosPid:setpoint to 0.
-    print "target height: " + ewPosPid:setpoint at (0,10).
-    set ewPosPid:minoutput to -maxHorizSpeed.
-    set ewPosPid:maxoutput to maxHorizSpeed.
-    print "target max abs ew speed: " + ewPosPid:maxoutput at (0,13).
-
-    local ewPid to pidloop(2).
-    set ewPid:setpoint to 0. //positive means go east
-    print "target ew-speed: " + ewPid:setpoint at (0,11).
-    set ewPid:minoutput to -80.//-45.
-    set ewPid:maxoutput to 80.//45.
-
-    local nsPosPid to pidloop().//0.006, (0.012/30), ((0.006*30)/8)).
-    set nsPosPid:setpoint to 0.
-    print "target height: " + nsPosPid:setpoint at (0,10).
-    set nsPosPid:minoutput to -maxHorizSpeed.
-    set nsPosPid:maxoutput to maxHorizSpeed.
-    print "target max abs ew speed: " + nsPosPid:maxoutput at (0,13).
-
-    local nsPid to pidloop(2).
-    set nsPid:setpoint to 0. //positive means go north
-    print "target ns-speed: " + nsPid:setpoint at (0,12).
-    set nsPid:minoutput to -80.//-45.
-    set nsPid:maxoutput to 80.//45.
-
-    local vertPosPid to pidloop().//0.006, (0.012/30), ((0.006*30)/8)).
-    set vertPosPid:setpoint to 0.
-    print "target height: " + vertPosPid:setpoint at (0,10).
-    set vertPosPid:minoutput to -maxVertSpeed.
-    set vertPosPid:maxoutput to maxVertSpeed.
-    print "target max abs vert speed: " + vertPosPid:maxoutput at (0,13).
-
-    local vertSpeedPid to pidloop().//0.006, (0.012/30), ((0.006*30)/8)).
-    set vertSpeedPid:setpoint to 0.
-    set vertSpeedPid:minoutput to -1.
-    set vertSpeedPid:maxoutput to 1.
-
+    local ewOffset is 0. //for diverting horizontally, keeping AGL
+    local nsOffset is 0. //for diverting horizontally, keeping AGL
     local lock eastVec to vcrs(north:forevector, body:position):normalized.
+    local lock northVec to ship:north:forevector:normalized.
+    local lock posTar to geoPos:altitudeposition(geoPos:terrainheight + height).
+    local lock geoPosOff to body:geopositionof(posTar + eastVec*ewOffset + northVec*nsOffset).
+    local lock posTarOff to geoPosOff:altitudeposition(geoPosOff:terrainheight + height).
+    local lock posError to posTarOff - ship:position.
+
+    local ewPosPid to pidloop(0.1, 0, 0, -maxHorizSpeed, maxHorizSpeed).
+    set ewPosPid:setpoint to 0.
+
+    local ewPid to pidloop(0.2, 0, 0, -1, 1).
+    set ewPid:setpoint to 0. //positive means go east
+
+    local nsPosPid to pidloop(0.1, 0, 0, -maxHorizSpeed, maxHorizSpeed).
+    set nsPosPid:setpoint to 0.
+
+    local nsPid to pidloop(0.2, 0, 0, -1, 1).
+    set nsPid:setpoint to 0. //positive means go north
+
+    local vertPosPid to pidloop(1, 0, 0, -maxVertSpeed, maxVertSpeed).
+    set vertPosPid:setpoint to 0.
+
+    local vertSpeedPid to pidloop(1, 0, 0, -1, 1).
+    set vertSpeedPid:setpoint to 0.
+
     local lock vertThrustRatio to vdot(ship:up:forevector, ship:facing:forevector).
     local tset to 0.
-    lock throttle to tset + (fgh()/(ship:availablethrust))/vertThrustRatio.
-    local startTime to time:seconds.
+    local lock vertThrust to tset + fgh()/ship:availablethrust.
+    lock throttle to vertThrust/vertThrustRatio.
+
+    //max horizontal thrust that can be requested without interfering with altitude control's current
+    //thrust request - assuming we just want to keep hovering at the current altitude
+    local lock maxHorizThrustHover to (1 - (fgh()/ship:availablethrust)^2)^(1/2).
+    //max horizontal thrust that can be requested without interfering with altitude control's current
+    //thrust request
+    local lock maxHorizThrustNow to (1 - min(1, (tset + fgh()/ship:availablethrust)^2))^(1/2).
 
     local lock ewVel to vdot(ship:velocity:surface, eastVec).
     local lock nsVel to vdot(ship:velocity:surface, ship:north:forevector).
     local lock vertVel to vdot(ship:velocity:surface, ship:up:forevector).
 
+    //action groups mainly for testing
     on AG1 {
-        set target to waypoint("flyhere").
-        print "going to flyhere" at (0,15).
+        set ewOffset to ewOffset - 10.
         return True.
     }
 
     on AG2 {
-        set target to waypoint("flyhere2").
-        print "going to flyhere2" at (0,15).
+        set nsOffset to nsOffset + 10.
         return True.
     }
 
     on AG3 {
-        set vertPosPid:setpoint to vertPosPid:setpoint - 1.
-        print "target height: " + vertPosPid:setpoint at (0,10).
+        set nsOffset to nsOffset - 10.
         return True.
     }
 
-
     on AG4 {
-        set ewPid:setpoint to ewPid:setpoint + 1.
-        print "target ew-speed: " + ewPid:setpoint at (0,11).
+        set ewOffset to ewOffset + 10.
         return True.
     }
 
     on AG5 {
-        set ewPid:setpoint to ewPid:setpoint - 1.
-        print "target ew-speed: " + ewPid:setpoint at (0,11).
+        set height to height + 10.
         return True.
     }
+
 
     on AG6 {
-        set nsPid:setpoint to nsPid:setpoint + 1.
-        print "target ns-speed: " + nsPid:setpoint at (0,12).
+        set height to height - 10.
         return True.
     }
-
-    on AG7 {
-        set nsPid:setpoint to nsPid:setpoint - 1.
-        print "target ns-speed: " + nsPid:setpoint at (0,13).
-        return True.
-    }
-
-    on AG8 {
-        set vertPosPid:maxoutput to vertPosPid:maxoutput - 1.
-        set vertPosPid:minoutput to vertPosPid:minoutput + 1.
-        print "target max abs vert speed: " + vertPosPid:maxoutput at (0,13).
-        return True.
-    }
-
-    on AG9 {
-        set vertPosPid:maxoutput to vertPosPid:maxoutput + 1.
-        set vertPosPid:minoutput to vertPosPid:minoutput - 1.
-        print "target max abs vert speed: " + vertPosPid:maxoutput at (0,13).
-        return True.
-    }
-
-    local stop to False.
 
     on AG10 {
         set stop to True.
         return True.
     }
 
-    //when alt:radar > 500 then {
-    //    set vertPosPid:setpoint to 50.
-    //}
 
-    if move:length > 0 {
-        set vertPosPid:setpoint to move[0].
-        if move[2] = 0 {
-            set nsPid:setpoint to 50.
-        }
-        if move[2] = 2 {
-            set nsPid:setpoint to -50.
-        }
-        if move[2] = 1 {
-            set ewPid:setpoint to 50.
-        }
-        if move[2] = 3 {
-            set ewPid:setpoint to -50.
-        }
-        local moveStartTime to time:seconds.
-        when time:seconds > moveStartTime + move[1] then {
-            set nsPid:setpoint to 0.
-            set ewPid:setpoint to 0.
-            when ship:velocity:surface:mag < 5 then {
-                set vertPosPid:setpoint to 10.
-                set vertSpeedPid:maxoutput to 5.
-                set vertSpeedPid:minoutput to -5.
-                when alt:radar <= 10 then {
-                    when nsVel < 0.1 and ewVel < 0.1 then {
-                        set vertPosPid:setpoint to -1.
-                        set vertSpeedPid:maxoutput to 0.5.
-                        set vertSpeedPid:minoutput to -0.5.
-                    }
-                }
-            }
-        }
-    } 
-
-    //when time:seconds > startTime + 10 then {
-    //    set ewPid:setpoint to -45.
-    //    print "t+10".
-    //    when time:seconds > startTime + 25 then {
-    //        print "t+40".
-    //        set ewPid:setpoint to 0.
-    //        set nsPid:setpoint to 45.
-    //        when time:seconds > startTime + 40 then {
-    //            print "t+70".
-    //            set nsPid:setpoint to 0.
-    //            when abs(ewVel) < 0.5 and abs(nsVel) < 0.5 then {
-    //                print "landingi".
-    //                set vertPosPid:setpoint to 0.  
-    //            }
-    //        }
-    //    }
-    //}
-
-    local srfVel to vecdraw({return ship:position.}, {return vdot(posError, ship:up:forevector)*ship:up:forevector:normalized.}, red).
-    set srfVel:show to true.  
-    local pose to vecdraw({return ship:position.}, {return posError.}, green).
+    //vecdraw for debugging
+    local pose to vecdraw({return ship:position.}, {return vdot(posError, northVec)*northVec.}, green).
     set pose:show to true.  
+    local pose2 to vecdraw({return ship:position.}, {return vdot(posError, eastVec)*eastVec.}, green).
+    set pose2:show to true.  
+    local ewPidVal is 10.
+    local nsPidVal is 10.
+    local ht1 to vecdraw({return ship:position.}, {return 100*nsPidVal*northVec.}, blue).
+    set ht1:show to true.  
+    local ht2 to vecdraw({return ship:position.}, {return 100*ewPidVal*eastVec.}, blue).
+    set ht2:show to true.  
+    local steerVec to lookdirup(ship:up:forevector:normalized, ship:facing:topvector).
+    local sv to vecdraw({return ship:position.}, {return steerVec:forevector*10.}, magenta).
+    set sv:show to true.  
 
+    //main loop
     print "AG0 to stop".
+    local stop to False.
     until stop = True {
         set vertSpeedPid:setpoint to vertPosPid:update(time:seconds, -vdot(posError, ship:up:forevector)). 
         set tset to vertSpeedPid:update(time:seconds, vertVel).
-        print vertVel at (0,5).
-        print "target height: " + vertPosPid:setpoint at (0,10).
-        print "height input; " + vdot(posError, ship:up:forevector) at (0,11).
-        
-        set nsPid:setpoint to nsPosPid:update(time:seconds, -vdot(posError, ship:north:forevector)).
-        local nsPidVal to nsPid:update(time:seconds, nsVel).
-        set ewPid:setpoint to ewPosPid:update(time:seconds, -vdot(posError, eastVec)).
-        local ewPidVal to -ewPid:update(time:seconds, ewVel).
 
-        local ewPitch to angleaxis(ewPidVal, north:forevector).
-        local nsPitch to angleaxis(nsPidVal, eastVec).
-        set steering to nsPitch * ewPitch * ship:up.
+        set nsPid:setpoint to nsPosPid:update(time:seconds, -vdot(posError, northVec)).
+        local nsPidVal to nsPid:update(time:seconds, nsVel) * maxHorizThrustHover. // scale to max horizThrust that still supports hovering
+        set ewPid:setpoint to ewPosPid:update(time:seconds, -vdot(posError, eastVec)).
+        local ewPidVal to ewPid:update(time:seconds, ewVel) * maxHorizThrustHover. // scale to max horizThrust that still supports hovering
+        //maxHorizThrustHover ignores possible altitude changes (and the thrust they require,
+        //and the fact that going both east and north at maxHorizThrustHover requires more than
+        //maxHorizThrustHover in case we would want more we scale the horizontal thrust down so
+        //that the vertical control is unaffected
+        local requestedHorizThrust to (nsPidVal^2 + ewPidVal^2)^(1/2).
+        if requestedHorizThrust > maxHorizThrustNow {
+            local scaling is maxHorizThrustNow/requestedHorizThrust.
+            set nsPidVal to nsPidVal * scaling.
+            set ewPidVal to ewPidVal * scaling.  
+        }
+
+        set steerVec to lookdirup(ship:up:forevector:normalized + eastVec*ewPidVal + northVec * nsPidVal, ship:facing:topvector).  
+        set steering to steerVec.
         wait 0.
     }
     print "done with loop".
+
     lock throttle to 0.
     set ship:control:pilotmainthrottle to 0.
-    //doScience(false).
 }
 
-hover().
-
-    //local vd to vecdraw({return ship:position.}, {return steering:forevector*20.}).
-    //set vd:show to true.
+hover(5, 10, waypoint("flyhere"):agl, waypoint("flyhere"):geoposition).

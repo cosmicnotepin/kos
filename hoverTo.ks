@@ -1,4 +1,7 @@
+//this never really worked :(
+//
 run once other.
+set config:ipu to 2000.
 
 function hoverTo {
     parameter target is waypoint("flyhere").

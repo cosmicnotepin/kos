@@ -22,10 +22,11 @@ function suicideBurn {
     lock steering to srfRetrograde.
     until distanceToGround() < targetHeight {
         if stoppingDistance() - ship:verticalSpeed * 2 > distanceToGround() {
-            lock throttle to 1.
+            set throttle to 1.
         } else {
-            lock throttle to 0.
+            set throttle to 0.
         }
+        wait 0.
     }
 }
 
@@ -39,7 +40,7 @@ function testSuicideHover {
     local lock vertVel to vdot(ship:velocity:surface, ship:up:forevector).
     wait until vertVel < 0.
     suicideBurn(10).
-    hover(1,-1).
+    hover(1,1).
 }
 
 function stopInOrbit {
@@ -67,7 +68,7 @@ function landImmediately {
     stopInOrbit().
     suicideBurn(10).
     gear on.
-    hover(1,-1).
+    hover(1,1).
 }
 
 function aeroBrakeReturn {

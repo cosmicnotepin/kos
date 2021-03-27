@@ -33,5 +33,11 @@ function fgh {
     return ship:mass*gh().
 }
 
+// direction looking at vec, not changing current "up"
+function unrotate {
+    parameter vec.
+    return lookdirup(vec, ship:facing:topvector).
+}
+
 //local vd to vecdraw({return ship:position.}, {return steering:forevector*20.}).
 //set vd:show to true.

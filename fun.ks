@@ -1,3 +1,5 @@
+set config:ipu to 2000.
+
 run once inclination.
 run once launch.
 run once kso.
@@ -91,11 +93,13 @@ function go {
     //launchToCirc(85000, true).
     //launchToCirc().
     //rendezvous(target).
-    launchToCircVac().//mun
-    //aeroBrakeReturn().
+    //launchToCircVac().//mun
+    //launchToCircVac(15000).//minmus
+    aeroBrakeReturn().
     //print burnTime(1000).
     //KSOat(240).
     //landImmediately().
+    //hover(5, 10, list(list(waypoint("ms"):geoposition, waypoint("ms"):agl))).
     //testSuicideHover().
     //lowOrbitScience().
     //print "MISSION".

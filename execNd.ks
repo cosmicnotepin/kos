@@ -1,4 +1,5 @@
 run once warp.
+run once other.
 
 //assumes every stage only has one type of engine
 //and only fuel for that type of engine
@@ -18,7 +19,7 @@ run once warp.
 //F: thrust
 function burnTime {
     parameter burn.
-    clearscreen.
+    //clearscreen.
     local colorList is list(RED, GREEN, BlUE, YELLOW, CYAN, MAGENTA, WHITE, BLACK).
     local g0 to 9.80665.
     local stagecount to stage:number.
@@ -129,7 +130,7 @@ function execNd {
     //burnTime also sets triggers to stage if necessary
     local burn_duration to burnTime(nd:deltav:mag).
     print "burn duration: " + burn_duration.
-    lock steering to nd:deltav.
+    lock steering to unrotate(nd:deltav).
     local initialAlignStartTime is time:seconds.
     wait until vang(nd:deltav, ship:facing:vector) < 0.25 or nd:eta <= (burn_duration/2 + 15) or time:seconds > initialAlignStartTime + 30.
     warpWait(time:seconds + nd:eta - (burn_duration/2 + 15)).

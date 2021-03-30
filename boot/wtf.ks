@@ -1,3 +1,5 @@
+run once other.
+
 wait 0.1.
 core:part:getmodule("kosprocessor"):doevent("open terminal").
 clearscreen.
@@ -8,7 +10,7 @@ when not ship:messages:empty then {
       print "message: " + received:content.
       rcs off.
       sas off.
-      lock steering to received:sender:position.
+      lock steering to unrotate(received:sender:position).
       print "looking at you!".
 }
 wait until 1<0.

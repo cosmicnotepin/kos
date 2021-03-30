@@ -26,7 +26,7 @@ function launchToCirc {
     }
     
     set mysteer to heading(dir,90).
-    lock steering to mysteer.
+    lock steering to unrotate(mysteer:forevector).
     
     until apoapsis > height {
       set vel to velocity:surface:mag.
@@ -76,11 +76,11 @@ function launchToCircVac {
         stage.
         preserve.
     }
-    set mysteer to heading(dir,90).
+    set mysteer to unrotate(heading(dir,90):forevector).
     lock steering to mysteer.
     lock throttle to 1.
     wait until alt:radar > 100.
-    set mysteer to heading(dir,45).
+    set mysteer to unrotate(heading(dir,45):forevector).
     wait until apoapsis > height.
     lock throttle to 0.
     set stagingTriggerActive to False.

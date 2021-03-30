@@ -1,10 +1,17 @@
+//convert the requested trueAnomaly to meanAnomaly
+//then calculate how long it would have taken to reach that mean anomaly from epoch(and the corresponding initial mean anomaly)
+//if that time is in the past add full orbits till it is not.
+
+//"epoch" in ksp is just some random timestamp ( think it is always in the past)
+//it changes during play
+
 function timeToTrueAnomaly {
 
   parameter tar.
   parameter taDeg. // true anomaly in degrees
 
   local ecc to tar:orbit:eccentricity.
-  local maEpoch to tar:orbit:meananomalyatepoch * (constant:pi/180).
+  local maEpochRad to tar:orbit:meananomalyatepoch * (constant:pi/180).
   local sma to tar:orbit:semimajoraxis.
   local mu to tar:orbit:body:mu.
   local epoch to tar:orbit:epoch.
@@ -15,20 +22,20 @@ function timeToTrueAnomaly {
   //wikipedia mean anomaly: M = E - ecc*sin(E)
   local meanAnomrad is eccAnomrad - ecc*sin(eccAnomDeg).
 
-  local diffFromEpoch is meanAnomrad - maEpoch.
-  until diffFromEpoch > 0 {
+  local diffFromEpoch is meanAnomrad - maEpochRad.
+  if diffFromEpoch < 0 {
     set diffFromEpoch to diffFromEpoch + 2 * constant:pi.
   }
   local meanmotion is sqrt(mu / sma^3).
   local timeFromepoch is diffFromEpoch/meanMotion.
-  local timeTillEta is timeFromEpoch + epoch - time:seconds.
+  local timeTillFirstTaDeg is timeFromEpoch + epoch - time:seconds. //first time since epoch the requestedtrue anomaly is reached
 
-//TODO make this not annoying
-  until timeTillEta >= 0 {
-    set timeTillEta to timeTillEta + tar:orbit:period.
+  if timeTillFirstTaDeg < 0 {
+      local extraOrbits to ceiling(abs(timeTillFirstTaDeg) / tar:orbit:period).
+      return timeTillFirstTaDeg + extraOrbits * tar:orbit:period.
+  } else {
+      return timeTillFirstTaDeg.
   }
-
-  return timeTillEta.
 }
 
 function radiusAtTrueAnomaly {

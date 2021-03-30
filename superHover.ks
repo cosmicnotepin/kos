@@ -137,7 +137,7 @@ function hover {
             set ewPidVal to ewPidVal * scaling.  
         }
 
-        set steerVec to lookdirup(ship:up:forevector:normalized + eastVec*ewPidVal + northVec * nsPidVal, ship:facing:topvector).  
+        set steerVec to unrotate(ship:up:forevector:normalized + eastVec*ewPidVal + northVec * nsPidVal).  
         set steering to steerVec.
         wait 0.
     }

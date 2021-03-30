@@ -64,6 +64,7 @@ function dvInclChange {
 
 function matchInclination {
     parameter tar.
+    print "matchInclination".
     local angle to angleToTargetOrbit(target).
     local andn to ascenDescenFinder(target).
     local an to andn[0].

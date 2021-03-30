@@ -1,3 +1,4 @@
+run once other.
 
 function deorbit {
     parameter periapse is 30000.
@@ -18,7 +19,7 @@ function land {
     set warpmode to "physics".
     set warp to 4.
 
-    lock steering to srfretrograde.
+    lock steering to unrotate(srfretrograde).
     stage.
     wait 2.
     when (not chutessafe) then {
@@ -56,7 +57,7 @@ function setCapsuleFree {
     set warpmode to "physics".
     set warp to 4.
 
-    lock steering to srfretrograde.
+    lock steering to unrotate(srfretrograde).
     chutes on.
     wait 1.
     stage.

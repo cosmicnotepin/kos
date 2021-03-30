@@ -51,7 +51,7 @@ function hoverTo {
     clearvecdraws().
     local errorThrust to speedPid:update(time:seconds, -errorVel:mag/max_acc).
     local totalThrustVel to antiGravityThrustVel + errorVel:normalized * min(errorThrust, maxErrorMag).
-    lock steering to lookdirup(totalThrustVel, ship:facing:topvector).
+    lock steering to unrotate(totalThrustVel).
     //lock steering to ship:up.//lookdirup(errorVel, -ship:body:position).
     lock throttle to totalThrustVel:mag.
 

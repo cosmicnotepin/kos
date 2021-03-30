@@ -1,4 +1,6 @@
 run once hover.
+run once other.
+run once launch.
 global boundingBox is ship:bounds.
 
 function distanceToGround {
@@ -19,7 +21,7 @@ function stoppingDistance {
 function suicideBurn {
     print "suicide burning".
     parameter targetHeight is 10.
-    lock steering to srfRetrograde.
+    lock steering to unrotate(srfRetrograde:forevector).
     until distanceToGround() < targetHeight {
         if stoppingDistance() - ship:verticalSpeed * 2 > distanceToGround() {
             set throttle to 1.
@@ -32,7 +34,7 @@ function suicideBurn {
 
 function testSuicideHover { 
     wait 1.
-    set steering to heading(90,90).
+    set steering to unrotate(heading(90,90)).
     lock throttle to 1.
     stage.
     wait until alt:radar > 500.
@@ -47,7 +49,7 @@ function stopInOrbit {
     //assuming circular orbit 
     print "stopping in orbit".
     local lock HorVelVec to vxcl(up:vector, -velocity:surface).
-    lock steering to HorVelVec.
+    lock steering to unrotate(HorVelVec).
     wait until vang(HorVelVec, ship:facing:vector) < 0.25.
     lock throttle to 1.
     local tset to 0.
@@ -72,7 +74,22 @@ function landImmediately {
 }
 
 function aeroBrakeReturn {
+    launchToCircVac().
+    print "set node for aerobrake return, then AG1".
+    local current to AG1.
+    wait until AG1 <> current.
     execNd().
-    lock steering to retrograde.
     stage.
+    lock steering to unrotate(retrograde:forevector).
+    warpWait(time:seconds + obt:nextpatcheta + 60).
+    //find safe space outside atmosphere to warp to
+    local t to 15.
+    until (positionat(ship, time:seconds + eta:periapsis-t) - body:position):mag > 70000 + body:radius {
+        set t to t + 15.
+    }
+
+    warpWait(time:seconds + eta:periapsis - t).
+    set warpmode to "physics".
+    set warp to 4.
+    wait until status = "landed" or status = "splashed".
 }

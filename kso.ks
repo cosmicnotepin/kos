@@ -1,4 +1,5 @@
 run once execNd.
+run once other.
 
 function dvKSOTrans {
     local y to obt:body:mu.
@@ -45,13 +46,13 @@ function KSOat {
     set tset to 0.
     lock throttle to tset.
     if obt:semimajoraxis > as {
-        lock steering to retrograde.
+        lock steering to unrotate(retrograde).
         wait until vang(retrograde:vector, ship:facing:vector) < 0.25.
         until obt:semimajoraxis < (as + 0.5) {
             set tset to min(abs(obt:semimajoraxis - as)/100000, 1).
         }
     } else {
-        lock steering to prograde.
+        lock steering to unrotate(prograde).
         wait until vang(prograde:vector, ship:facing:vector) < 0.25.
         until obt:semimajoraxis > (as - 0.5) {
             set tset to min(abs(obt:semimajoraxis - as)/100000, 1).

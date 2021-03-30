@@ -39,5 +39,30 @@ function unrotate {
     return lookdirup(vec, ship:facing:topvector).
 }
 
+function circAtPeriapse {
+    print "circAtPeriapse()".
+    local y to obt:body:mu.
+    local curSpeedPer to velocityat(ship, time:seconds + eta:periapsis):orbit:mag.
+    local curRadiusPer to obt:periapsis + body:radius.
+    local tarSpeedPer to sqrt(y*(2/curRadiusPer - 1/curRadiusPer)).
+    local nd is Node(time:seconds + eta:periapsis, 0, 0, tarSpeedPer - curSpeedPer ).
+    execNd(nd).
+}
+
+function matchSMA {
+    parameter tar.
+    print "matchSMA()".
+    local nodeTime to time:seconds + eta:apoapsis.
+    local radiusAtNode to obt:apoapsis + body:radius.
+    if tar:obt:semimajoraxis < ship:obt:semimajoraxis {
+        set nodeTime to time:seconds + eta:periapsis.
+        set radiusAtNode to obt:periapsis + body:radius.
+    }
+    local dv to visViva(radiusAtNode, tar:obt:semimajoraxis).
+    local nd is Node(nodeTime, 0, 0, dv).
+    execNd(nd).
+}
+
+
 //local vd to vecdraw({return ship:position.}, {return steering:forevector*20.}).
 //set vd:show to true.

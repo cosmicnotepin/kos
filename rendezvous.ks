@@ -27,49 +27,64 @@ function matchApoapsis {
     execNd(nd).
 }
 
+//Todo this can still fail if we do not make it into the leading position in the alloted orbits
 function warpToBetterAlignment {
     parameter tar.
     parameter maxWaitOrbits is 10.
+    parameter offsetDeg is 0.
     print "warpToBetterAlignment()".
     local theWait is 0.
-    local theAngle is 180.
+    local curError is 180.
     from {local o is 0.} until o = maxWaitOrbits step {set o to o + 1.} do {
         local apoTime is  time:seconds + eta:apoapsis + o*obt:period.
         local vecS is positionat(ship, apoTime) - body:position.
         local vecT is positionat(tar, apoTime) - body:position.
         local vecSTCrs is vcrs(vecS, vecT).
         local vecSVCrs is vcrs(body:position, velocity:orbit).
-        local cmp to 0.
-        set cmp to vdot(vecSTCrs, vecSVCrs) > 0. //always lead, so that we never lower our periapse to get an encounter
-        if vang(vecS,vecT) < theAngle and cmp {
-            set theAngle to vang(vecS, vecT).
+        local cmp to vdot(vecSTCrs, vecSVCrs) > 0. //always lead, so that we never lower our periapse to get an encounter
+        //always lead more than offset, get as close as possible, and always lead
+        if vang(vecS,vecT) > offsetDeg and abs(vang(vecS,vecT) - offsetDeg) < curError and cmp {
+            set curError to abs(vang(vecS,vecT) - offsetDeg). 
             set theWait to apoTime.
         }
     }
-    warpWait(theWait - 600).
+    warpWait(theWait - 600). //drop off 10 minutes before apoapsis (and thusly before next burn in rendezvousAtNextApoapsis)
 }
 
 function rendezvousAtNextApoapsis {
     parameter tar.
+    parameter offsetDeg is 0.
     print "rendezvousAtNextApoapsis()".
     local p to timeToTrueAnomaly(tar,180).
-    set p to p + tar:obt:period. //we are leading and about 10 mins from apoapsis, so target is too
+    local timeToTargetAtOffset to timeToTrueAnomaly(tar, 180 - offsetDeg).
+    if timeToTargetAtOffset < p {
+        set offsetTime to p - timeToTargetAtOffset.
+    } else {
+        set offsetTime to p + tar:obt:period - timeToTargetAtOffset.
+    }
+    set p to p + tar:obt:period. //target is approaching apoapsis, we'll catch it on the next one
     local tarApoVec to positionat(tar, time:seconds + p) - body:position.
     local trueAnomTarApo to obt:trueanomaly + vang(tarApoVec, ship:position - body:position).
     local timeToTarApo to timeToTrueAnomaly(ship, trueAnomTarApo).
-    set p to p - timeToTarApo.
+    set p to p - timeToTarApo. //time for target to reach apoapsis again, from the time when we reach it next
     local y to body:mu.
     local pi to constant:pi.
-    local sma to (((p^2)*y)/(4*(pi^2)))^(1/3).
+    local sma to ((((p-offsetTime)^2)*y)/(4*(pi^2)))^(1/3). //sma for orbit with just the right period
     local radiusAtTarApo to radiusAtTrueAnomaly(ship, trueAnomTarApo).
     local dv to visViva(radiusAtTarApo, sma).
-    execNd(node(time:seconds + timeToTarApo, 0, 0, dv+0.1)).
+    print "setting up rendevous".
+    execNd(node(time:seconds + timeToTarApo, 0, 0, dv+0.1)). // + 0.1 because we assume low TWR engine that does not overshoot target dv
+
     local rendezvousApproachTime to eta:apoapsis.
-    if eta:apoapsis < obt:period/2 {
+    if radiusAtTarApo < sma {
+        set rendezvousApproachTime to eta:periapsis.
+    }
+    if rendezvousApproachTime < obt:period/2 { //burn finished before it passed the point of rendevous in next orbit
         set rendezvousApproachTime to rendezvousApproachTime + obt:period.
     }
     local theWait to time:seconds + rendezvousApproachTime - 300.
-    warpWait(theWait).
+    warpWait(theWait). //dropoff 5 mins before rendevous
+    print "should be at rendevous - 5 min".
 }
 
 function toTargetAtSpeed {
@@ -142,7 +157,7 @@ function dockRCS {
     parameter tar.
 
     local lock dist to (tar:position - ship:position):mag.
-    lock steering to tar:position.
+    lock steering to unrotate(tar:position).
     wait until vang(tar:position, ship:facing:vector) < 0.25.
     armGrapplingDevice().
     RCS on.
@@ -203,6 +218,23 @@ function rendezvous {
 
 }
 
+function matchOrbitWithOffset {
+    parameter tar.
+    parameter offsetDeg.
+    parameter maxWaitOrbits is 0.
+    print "matchOrbitWithOffset".
+    matchInclination(tar).
+
+    matchApoapsis(tar).
+
+    warpToBetterAlignment(tar, maxWaitOrbits, offsetDeg).
+
+    rendezvousAtNextApoapsis(tar, offsetDeg).
+
+    matchSMA(tar).
+}
+
+//not great
 function flyBy {
     parameter tar.
     parameter maxWaitOrbits is 10.

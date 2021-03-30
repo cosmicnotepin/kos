@@ -11,6 +11,7 @@ run once kruscht.
 run once warp.
 run once hover.
 run once land.
+run once trueanomaly.
 
 function logShip {
     FOR P IN SHIP:PARTS {
@@ -83,25 +84,45 @@ function rendezvousFromLaunchpad {
     print "COMPL_".
 }
 
+function toMunmus {
+    launchToCirc().
+    print "set node for encounter, then AG1".
+    local current to AG1.
+    wait until AG1 <> current.
+    execNd().
+    print "changing to target SOI".
+    warpWait(time:seconds + obt:nextpatcheta + 60). //drop off 1 minute after transition
+    circAtPeriapse().  
+    print "at munmus circ orbit".
+}
+
+function positionRelay {
+    toMunmus().
+    print "set target to match with offset 120 (we will lead target)".
+    local current to AG1.
+    wait until AG1 <> current.
+    matchOrbitWithOffset(target, 120, 10). 
+}
+
+
 function go {
     //print "I HAVE CONTROL_".
     //wait 1.
-    //munFlyBy().
-    //hover(10, 50, list(50,60,2)). // move south with 50m/s for 60s, then attempt to land again
-    //hover(10, 50, list(50,60,0)). // move north with 50m/s for 60s, then attempt to land again
-    //hover(1,-1).
     //launchToCirc(85000, true).
     //launchToCirc().
+    toMunmus().
+    //positionRelay().
+    //circAtPeriapse().
     //rendezvous(target).
+    //matchInclination(target).
+    //matchSMA(target).
     //launchToCircVac().//mun
     //launchToCircVac(15000).//minmus
-    aeroBrakeReturn().
-    //print burnTime(1000).
+    //aeroBrakeReturn().
     //KSOat(240).
     //landImmediately().
     //hover(5, 10, list(list(waypoint("ms"):geoposition, waypoint("ms"):agl))).
-    //testSuicideHover().
-    //lowOrbitScience().
+    //hover(10, 20, list(list(waypoint("l1"):geoposition, waypoint("l1"):agl), list(waypoint("l2"):geoposition, waypoint("l2"):agl), list(waypoint("l3"):geoposition, waypoint("l3"):agl), list(waypoint("l4"):geoposition, waypoint("l4"):agl))).
     //print "MISSION".
     //print "COMPL_".
 }

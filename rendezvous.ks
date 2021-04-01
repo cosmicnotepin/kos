@@ -14,10 +14,18 @@ function matchApoapsis {
     local vecT is positionat(target, perTEta)-ship:body:position.
     local TrueAnomalyTargetPer is "x".
   
-    if vdot(vcrs(vecs, vect), v(0,1,0)) > 0 {
-        set trueAnomalyTargetPer to 360-vang(vecS,vecT).
+    if obt:inclination < 90 {
+        if vdot(vcrs(vecs, vect), v(0,1,0)) > 0 {
+            set trueAnomalyTargetPer to 360-vang(vecS,vecT).
+        } else {
+            set trueAnomalyTargetPer to vang(vecS,vecT).
+        }
     } else {
-        set trueAnomalyTargetPer to vang(vecS,vecT).
+        if vdot(vcrs(vecs, vect), v(0,1,0)) > 0 {
+            set trueAnomalyTargetPer to vang(vecS,vecT).
+        } else {
+            set trueAnomalyTargetPer to 360-vang(vecS,vecT).
+        }
     }
   
     local timeTargetPeriapsis is timeToTrueAnomaly(ship, trueAnomalyTargetPer).
@@ -63,6 +71,7 @@ function rendezvousAtNextApoapsis {
         set offsetTime to p + tar:obt:period - timeToTargetAtOffset.
     }
     set p to p + tar:obt:period. //target is approaching apoapsis, we'll catch it on the next one
+    local rendevousTime to time:seconds + p - offsetTime.
     local tarApoVec to positionat(tar, time:seconds + p) - body:position.
     local trueAnomTarApo to obt:trueanomaly + vang(tarApoVec, ship:position - body:position).
     local timeToTarApo to timeToTrueAnomaly(ship, trueAnomTarApo).
@@ -74,17 +83,40 @@ function rendezvousAtNextApoapsis {
     local dv to visViva(radiusAtTarApo, sma).
     print "setting up rendevous".
     execNd(node(time:seconds + timeToTarApo, 0, 0, dv+0.1)). // + 0.1 because we assume low TWR engine that does not overshoot target dv
-
-    local rendezvousApproachTime to eta:apoapsis.
-    if radiusAtTarApo < sma {
-        set rendezvousApproachTime to eta:periapsis.
-    }
-    if rendezvousApproachTime < obt:period/2 { //burn finished before it passed the point of rendevous in next orbit
-        set rendezvousApproachTime to rendezvousApproachTime + obt:period.
-    }
-    local theWait to time:seconds + rendezvousApproachTime - 300.
-    warpWait(theWait). //dropoff 5 mins before rendevous
+    warpWait(rendevousTime - 300). //dropoff 5 mins before rendevous
     print "should be at rendevous - 5 min".
+}
+
+function matchSMAAtTargetApoapsis {
+    Parameter tar.
+    print "matchApoapsis()".
+  
+    local perSEta is time:seconds + eta:periapsis.
+    local apoTEta is time:seconds + timeToTrueAnomaly(tar, 180).
+  
+    local vecS is positionat(ship, perSEta)-ship:body:position.
+    local vecT is positionat(target, apoTEta)-ship:body:position.
+    local TrueAnomalyTargetPer is "x".
+  
+    if obt:inclination < 90 {
+        if vdot(vcrs(vecs, vect), v(0,1,0)) > 0 {
+            set trueAnomalyTargetApo to 360-vang(vecS,vecT).
+        } else {
+            set trueAnomalyTargetApo to vang(vecS,vecT).
+        }
+    } else {
+        if vdot(vcrs(vecs, vect), v(0,1,0)) > 0 {
+            set trueAnomalyTargetApo to vang(vecS,vecT).
+        } else {
+            set trueAnomalyTargetApo to 360-vang(vecS,vecT).
+        }
+    }
+  
+    local timeTargetApoapsis is timeToTrueAnomaly(ship, trueAnomalyTargetApo).
+    local curRadTarApo is radiusAtTrueAnomaly(ship, trueAnomalyTargetApo).
+    local dv is visViva(curRadTarApo, tar:obt:semimajoraxis).
+    local nd is Node(time:seconds + timeTargetApoapsis, 0, 0, dv).
+    execNd(nd).
 }
 
 function toTargetAtSpeed {
@@ -231,24 +263,10 @@ function matchOrbitWithOffset {
 
     rendezvousAtNextApoapsis(tar, offsetDeg).
 
-    matchSMA(tar).
+    matchSMAAtTargetApoapsis(tar).
 }
 
-//not great
-function flyBy {
-    parameter tar.
-    parameter maxWaitOrbits is 10.
-    print "flyBy".
-
-    matchInclination(tar).
-
-    matchApoapsis(tar).
-
-    warpToBetterAlignment(tar, maxWaitOrbits).
-
-    rendezvousAtNextApoapsis(tar).
-}
-
+//wtf is this?
 function circularToCircular {
     parameter tar.
     set so to ship:orbit.

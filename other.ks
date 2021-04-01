@@ -39,13 +39,24 @@ function unrotate {
     return lookdirup(vec, ship:facing:topvector).
 }
 
-function circAtPeriapse {
-    print "circAtPeriapse()".
+function circAtPeriapsis {
+    print "circAtPeriapsis()".
     local y to obt:body:mu.
     local curSpeedPer to velocityat(ship, time:seconds + eta:periapsis):orbit:mag.
     local curRadiusPer to obt:periapsis + body:radius.
     local tarSpeedPer to sqrt(y*(2/curRadiusPer - 1/curRadiusPer)).
     local nd is Node(time:seconds + eta:periapsis, 0, 0, tarSpeedPer - curSpeedPer ).
+    execNd(nd).
+}
+
+//untested
+function circAtApoapsis {
+    print "circAtApoapsis()".
+    local y to obt:body:mu.
+    local curSpeedApo to velocityat(ship, time:seconds + eta:apoapsis):orbit:mag.
+    local curRadiusApo to obt:apoapsis + body:radius.
+    local tarSpeedPer to sqrt(y*(2/curRadiusApo - 1/curRadiusApo)).
+    local nd is Node(time:seconds + eta:apoapsis, 0, 0, tarSpeedApo - curSpeedApo ).
     execNd(nd).
 }
 

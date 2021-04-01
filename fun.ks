@@ -85,19 +85,23 @@ function rendezvousFromLaunchpad {
 }
 
 function toMunmus {
+    print "set target moon, then AG1".
+    local current to AG1.
+    wait until AG1 <> current.
     launchToCirc().
+    matchInclination(target).
     print "set node for encounter, then AG1".
     local current to AG1.
     wait until AG1 <> current.
     execNd().
     print "changing to target SOI".
     warpWait(time:seconds + obt:nextpatcheta + 60). //drop off 1 minute after transition
-    circAtPeriapse().  
+    circAtPeriapsis().  
     print "at munmus circ orbit".
 }
 
+
 function positionRelay {
-    toMunmus().
     print "set target to match with offset 120 (we will lead target)".
     local current to AG1.
     wait until AG1 <> current.
@@ -110,13 +114,10 @@ function go {
     //wait 1.
     //launchToCirc(85000, true).
     //launchToCirc().
-    toMunmus().
+    //toMunmus().
     //positionRelay().
-    //circAtPeriapse().
-    //rendezvous(target).
-    //matchInclination(target).
-    //matchSMA(target).
-    //launchToCircVac().//mun
+    //circAtPeriapsis().
+    //matchApoapsis(target).
     //launchToCircVac(15000).//minmus
     //aeroBrakeReturn().
     //KSOat(240).

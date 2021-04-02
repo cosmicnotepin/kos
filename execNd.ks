@@ -71,13 +71,14 @@ function burnTime {
         //TODO if engines[s]:length > 0
         // Ion engine circdv??
 
-        set dryMass[s] to mass[s] - fuel[s].
         if engines[s]:length > 0 {
             set ve[s] to engines[s][0]:visp*g0.
             for e in engines[s] {
                 set F[s] to F[s] + e:possiblethrustat(0.0).
             }
             set q[s] to F[s]/ve[s].
+
+            set dryMass[s] to mass[s] - fuel[s].
             set dv[s] to ve[s]*ln(mass[s]/dryMass[s]).
             set t[s] to ((mass[s] - (mass[s]/(constant:e^(dv[s]/ve[s]))))/q[s]).
         } else {
@@ -101,6 +102,7 @@ function burnTime {
 
     local i to stagecount.
     local tBurn to 0.
+    //print dv.
     until burn - dv[i] < 0 {
         print "stage" + i + "gets us: " + dv[i]  + " in " + t[i].
         set burn to burn - dv[i].
@@ -140,13 +142,16 @@ function execNd {
     wait until nd:eta <= (burn_duration/2).
     local tset to 0.
     lock throttle to tset.
-    until nd:deltav:mag < 0.1
+    local lastMag to nd:deltav:mag.
+    until nd:deltav:mag < 0.001 or (nd:deltav:mag > lastMag + 0.001 and nd:deltav:mag < 0.1)
     {
         set max_acc to maxthrust/ship:mass.  
         if max_acc = 0 {
             break.
         }
         set tset to min(0.25/vang(nd:deltav, ship:facing:vector), min(nd:deltav:mag/max_acc, 1)).
+        set lastMag to nd:deltav:mag.
+        wait 0.
     }
     lock throttle to 0.
     unlock steering.

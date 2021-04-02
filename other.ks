@@ -55,7 +55,7 @@ function circAtApoapsis {
     local y to obt:body:mu.
     local curSpeedApo to velocityat(ship, time:seconds + eta:apoapsis):orbit:mag.
     local curRadiusApo to obt:apoapsis + body:radius.
-    local tarSpeedPer to sqrt(y*(2/curRadiusApo - 1/curRadiusApo)).
+    local tarSpeedApo to sqrt(y*(2/curRadiusApo - 1/curRadiusApo)).
     local nd is Node(time:seconds + eta:apoapsis, 0, 0, tarSpeedApo - curSpeedApo ).
     execNd(nd).
 }
@@ -72,6 +72,11 @@ function matchSMA {
     local dv to visViva(radiusAtNode, tar:obt:semimajoraxis).
     local nd is Node(nodeTime, 0, 0, dv).
     execNd(nd).
+}
+
+function askForTarget {
+    print "kindly set target".
+    wait until hastarget.
 }
 
 

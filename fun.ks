@@ -58,36 +58,19 @@ function polarOrbitScience {
     print "COMPL_".
 }
 
-function munFlyBy {
-    print "I HAVE CONTROL_".
-
-    print "set target and trigger AG1".
-    set current to AG1.
-    wait until AG1 <> current.
-    launchToCirc(85000, true).
-    flyBy(target).
-
-    print "MISSION".
-    print "COMPL_".
-}
-
-
 function rendezvousFromLaunchpad {
     print "I HAVE CONTROL_".
 
-    print "set target and trigger AG1".
-    set current to AG1.
-    wait until AG1 <> current.
-    launchToCirc(80000, true).
+    askForTarget().
+    launchToCirc(80000).
     rendezvous(target).
     print "MISSION".
     print "COMPL_".
 }
 
 function toMunmus {
-    print "set target moon, then AG1".
-    local current to AG1.
-    wait until AG1 <> current.
+    print "asking for a minmus or mun here:".
+    askForTarget().
     launchToCirc().
     matchInclination(target).
     print "set node for encounter, then AG1".
@@ -96,33 +79,61 @@ function toMunmus {
     execNd().
     print "changing to target SOI".
     warpWait(time:seconds + obt:nextpatcheta + 60). //drop off 1 minute after transition
+    doScience().
     circAtPeriapsis().  
     print "at munmus circ orbit".
 }
 
 
 function positionRelay {
-    print "set target to match with offset 120 (we will lead target)".
-    local current to AG1.
-    wait until AG1 <> current.
+    print "this craft will lead target by 120 degrees".
+    askForTarget().
     matchOrbitWithOffset(target, 120, 10). 
 }
 
+function rescue {
+    askForTarget().
+    launchToCirc(75000).
+    rendezvous(target).
+    deorbit(20000).
+    land().
+}
+
+function dockFromLaunchpad {
+    askForTarget().
+    launchToCirc(75000).
+    rendezvous(target, 10, "dock").
+    deorbit(20000).
+    land().
+}
 
 function go {
+    //print "AG1 to go()".
+    //local current to AG1.
+    //wait until AG1 <> current.
     //print "I HAVE CONTROL_".
     //wait 1.
+    //dockFromLaunchpad().
+    //finalApproach(target, "dock").
+    deorbit(20000).
+    land().
+    //send(target, "blah").
+    //rescue().
+    //rendezvousFromLaunchpad().
+    //rendezvousAtNextApoapsis(target).
+    //approachMainEngine(target).  
+    //finalApproach(target).  
     //launchToCirc(85000, true).
+    //launchToCirc(100000, true).
     //launchToCirc().
+    //circAtApoapsis().
     //toMunmus().
+    //print burnTime(875).
     //positionRelay().
     //circAtPeriapsis().
-    //matchApoapsis(target).
     //launchToCircVac(15000).//minmus
-    //aeroBrakeReturn().
     //KSOat(240).
-    //landImmediately().
-    //hover(5, 10, list(list(waypoint("ms"):geoposition, waypoint("ms"):agl))).
+    //hover(40, 1, list(list(ship:geoposition, 500), list(ship:geoposition, 20))).
     //hover(10, 20, list(list(waypoint("l1"):geoposition, waypoint("l1"):agl), list(waypoint("l2"):geoposition, waypoint("l2"):agl), list(waypoint("l3"):geoposition, waypoint("l3"):agl), list(waypoint("l4"):geoposition, waypoint("l4"):agl))).
     //print "MISSION".
     //print "COMPL_".

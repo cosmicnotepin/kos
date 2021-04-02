@@ -1,6 +1,5 @@
 function doScience {
     parameter transmit is false.
-    parameter blacklist is list().
 
     if transmit {
         print "transmitting science".
@@ -10,15 +9,10 @@ function doScience {
 
     bays on.
     //wait 2.
-    set experimentTypes to list("sensorThermometer", "sensorBarometer", "science.module", "GooExperiment", "sensorAtmosphere", "sensorGravimeter", "sensorAccelerometer", "landerCabinSmall").
-    for type in experimentTypes {
-        print type.
-        if blacklist:contains(type) {
-            print "here".
-            break.
-        }
-        for part in ship:partsnamed(type) {
-            set sm to part:getmodule("ModuleScienceExperiment").
+    for p in ship:parts {
+        if p:hasmodule("ModuleScienceExperiment") {
+            print p:name.
+            set sm to p:getmodule("ModuleScienceExperiment").
             if not sm:inoperable {
                 sm:dump.
                 sm:reset.
@@ -29,15 +23,13 @@ function doScience {
                 if transmit and sm:hasdata {
                     sm:transmit.
                 }
-                break.
             }
         } 
     }
 
     if not transmit {
-        for sc in ship:modulesnamed("ModuleScienceContainer") {
-            sc:doaction("collect all", true).
-        }
+        local expStorUnit to ship:partsnamed("ScienceBox")[0].
+        expStorUnit:getmodule("ModuleScienceContainer"):doaction("collect all", true).
     }
     bays off.
     //wait 2.
@@ -49,11 +41,10 @@ set lastSituation to "".
 
 function checkScience {
     parameter transmit is false.
-    parameter blacklist is list().
     if lastBiome = addons:biome:current and lastSituation = addons:biome:situation {
         return.
     }
     set lastBiome to addons:biome:current.
     set lastSituation to addons:biome:situation.
-    doScience(transmit, blacklist).
+    doScience(transmit).
 }

@@ -19,9 +19,15 @@ function stoppingDistance {
 }
 
 function suicideBurn {
-    print "suicide burning".
     parameter targetHeight is 10.
+    print "suicide burning".
+    set warpmode to "physics".
+    set warp to 4.
     lock steering to unrotate(srfRetrograde:forevector).
+    when stoppingDistance() - ship:verticalSpeed * 2 > distanceToGround() then {
+        set warp to 1.
+        return false.
+    }
     until distanceToGround() < targetHeight {
         if stoppingDistance() - ship:verticalSpeed * 2 > distanceToGround() {
             set throttle to 1.
@@ -67,10 +73,17 @@ function stopInOrbit {
 }
 
 function landImmediately {
+    local stagingTriggerActive is True.
+
+    when stagingTriggerActive and maxthrust = 0 then {
+        stage.
+        preserve.
+    }
     stopInOrbit().
     suicideBurn(10).
     gear on.
     hover(1,1).
+    set stagingTriggerActive to false.
 }
 
 function aeroBrakeReturn {
@@ -79,7 +92,12 @@ function aeroBrakeReturn {
     local current to AG1.
     wait until AG1 <> current.
     execNd().
+    stage. 
+    wait 1.
     stage.
+    wait 1.
+    stage.
+    wait 1.
     lock steering to unrotate(retrograde:forevector).
     warpWait(time:seconds + obt:nextpatcheta + 60).
     //find safe space outside atmosphere to warp to

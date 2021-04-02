@@ -62,12 +62,12 @@ function warpToBetterAlignment {
 function rendezvousAtNextApoapsis {
     parameter tar.
     parameter offsetDeg is 0.
+    parameter dropOffBeforeRendezvous is 300.
     print "rendezvousAtNextApoapsis()".
     local p to timeToTrueAnomaly(tar,180).
     local timeToTargetAtOffset to timeToTrueAnomaly(tar, 180 - offsetDeg).
-    if timeToTargetAtOffset < p {
-        set offsetTime to p - timeToTargetAtOffset.
-    } else {
+    set offsetTime to p - timeToTargetAtOffset.
+    if timeToTargetAtOffset > p and offsetDeg > 0 {
         set offsetTime to p + tar:obt:period - timeToTargetAtOffset.
     }
     set p to p + tar:obt:period. //target is approaching apoapsis, we'll catch it on the next one
@@ -83,8 +83,8 @@ function rendezvousAtNextApoapsis {
     local dv to visViva(radiusAtTarApo, sma).
     print "setting up rendevous".
     execNd(node(time:seconds + timeToTarApo, 0, 0, dv+0.1)). // + 0.1 because we assume low TWR engine that does not overshoot target dv
-    warpWait(rendevousTime - 300). //dropoff 5 mins before rendevous
-    print "should be at rendevous - 5 min".
+    warpWait(rendevousTime - dropOffBeforeRendezvous). //dropoff before rendezvous
+    print "should be at rendevous - dropOffBeforeRendezvous".
 }
 
 function matchSMAAtTargetApoapsis {
@@ -132,6 +132,7 @@ function toTargetAtSpeed {
 function approachMainEngine {
     parameter tar.
     print "approach()".
+    toTargetAtSpeed(tar, 0).
 
     local lock dist to (tar:position - ship:position):mag.
     local speed to 50.
@@ -185,17 +186,18 @@ function send {
     }
 }
 
-function dockRCS {
+function finalApproach {
     parameter tar.
+    parameter objective is "approach". //one of "approach", "dock", "grapple"
 
     local lock dist to (tar:position - ship:position):mag.
     lock steering to unrotate(tar:position).
     wait until vang(tar:position, ship:facing:vector) < 0.25.
-    armGrapplingDevice().
+    //armGrapplingDevice().
     RCS on.
     local lock tarVelVec to (ship:velocity:orbit - tar:velocity:orbit).
 
-    send(tar, "lookAtMe").
+    //send(tar, "lookAtMe").
 
     local forePid to pidloop().
     set forePid:setpoint to 10.
@@ -215,8 +217,18 @@ function dockRCS {
     set topPid:maxoutput to 1.
     local lock topVel to vdot(tarVelVec, ship:facing * v(0,1,0)).
 
-    local grappleModule to ship:partsnamed("GrapplingDevice")[0]:getmodule("ModuleGrappleNode").
-    until grappleModule:hasevent("release") {
+    //local grappleModule to ship:partsnamed("GrapplingDevice")[0]:getmodule("ModuleGrappleNode").
+    if objective = "approach" {
+        when dist < 20 then {
+            set forePid:setpoint to 0.
+        }
+    }
+    if objective = "dock" {
+        send(tar, "blah").
+    }
+    local current to AG1.
+    print "AG1 to stop auto-RCS".
+    until AG1 <> current {
         set forePid:setpoint to min(dist/10 + 0.1, 10).
         set ship:control:fore to forePid:update(time:seconds, foreVel).
         set ship:control:starboard to starPid:update(time:seconds, starVel).
@@ -228,12 +240,16 @@ function dockRCS {
     unlock steering.
     rcs off.
     sas off.
+    print "AG1 to continue mission after finalApproach()".
+    local current to AG1.
+    wait until AG1 <> current.
 }
 
 
 function rendezvous {
     parameter tar.
     parameter maxWaitOrbits is 10.
+    parameter objective is "approach".
     print "rendevous()".
 
     matchInclination(tar).
@@ -242,12 +258,11 @@ function rendezvous {
 
     warpToBetterAlignment(tar, maxWaitOrbits).
 
-    rendezvousAtNextApoapsis(tar).
+    rendezvousAtNextApoapsis(tar, 0, 0).
 
     approachMainEngine(tar).  
 
-    dockRCS(tar).
-
+    finalApproach(tar, objective).  
 }
 
 function matchOrbitWithOffset {

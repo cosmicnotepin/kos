@@ -19,7 +19,7 @@ function land {
     set warpmode to "physics".
     set warp to 4.
 
-    lock steering to unrotate(srfretrograde).
+    lock steering to unrotate(srfretrograde:forevector).
     stage.
     wait 2.
     when (not chutessafe) then {

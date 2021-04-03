@@ -11,12 +11,32 @@ if status = "prelaunch" {
     when not ship:messages:empty then {
           set received to ship:messages:pop.
           print "sent by " + received:sender:name + " at " + received:sentat.
-          print "message: " + received:content.
+          print "docking port received".
+          local dpuid to received:content.
+          local tdp to "x".
+          for p in received:sender:parts {
+              if p:uid = dpuid {
+                  set tdp to p.
+              }
+          }
+          list dockingports in dps.
+          local selectedDP to "x".
+          for dp in dps {
+              if dp:state = "ready" and dp:nodetype = tdp:nodetype {
+                  dp:controlfrom().
+                  set selectedDP to dp.
+                  set c to received:sender:connection.
+                  if c:sendmessage(dp:uid) {
+                        print "free dockingport uid sent".
+                  }
+                  break.
+              }
+          }
+
           rcs off.
           sas off.
-          //todo: ask user to set "control from here" on the desired docking port first
-          lock steering to unrotate(received:sender:position).
-          print "looking at you!".
+          lock steering to unrotate(tdp:position - selectedDP:position).
+          print "looking at you".
     }
     wait until false.
 }

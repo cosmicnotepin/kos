@@ -3,10 +3,69 @@ run once other.
 
 set config:ipu to 2000.
 
+function groundNormal {
+    parameter geoPos.
+
+    local northVec to ship:north:forevector:normalized.
+    local eastVec to vcrs(north:forevector, body:position):normalized.  
+    local center is geoPos:altitudePosition(geoPos:terrainHeight).
+    local top to body:geopositionOf(center + 5 * northVec).
+    local right to body:geopositionOf(center - 5 * ( - sin(30) * northVec - cos(30) * eastVec)).
+    local left to body:geopositionOf(center - 5 * ( - sin(30) * northVec + cos(30) * eastVec)).
+    local topVec to top:altitudeposition(top:terrainheight).
+    local rightVec to right:altitudeposition(right:terrainheight).
+    local leftVec to left:altitudeposition(left:terrainheight).
+    //local shower to vecdraw({return geoPos:altitudeposition(geoPos:terrainheight).}, {return 30 * vcrs(topVec - rightVec, topVec - leftVec):normalized.}, red).
+    //set shower:show to true.
+    return vcrs(topVec - rightVec, topVec - leftVec):normalized.
+}
+
+//searches in a grid spiral about the supplied geopos
+//for a spot with less than maxGroundAngle slope
+//returns the first, not the best spot
+function findLandingSpotAround {
+    parameter geoPos.
+    parameter maxGroundAngle.
+    local gridPointDistance to 100.
+    local maxPointsToCheck to 10000.
+    local center to geoPos:altitudeposition(geoPos:terrainheight).
+    local northVec to ship:north:forevector:normalized * gridPointDistance.
+    local eastVec to vcrs(north:forevector, body:position):normalized * gridPointDistance.  
+    local dx to 0.
+    local dy to -1.
+    local x to 0.
+    local y to 0.
+    local bestGeoPos to geoPos.
+    local bestAngle to 90.
+    for i in range(0, 10000) {
+        local geoPosToCheck to body:geopositionof(-x * eastVec + y * northVec).
+        local geoPosToCheckPos to geoPosToCheck:altitudeposition(geoPosToCheck:terrainheight).
+        local toCheckAngle to vang(groundNormal(geoPosToCheck), geoPosToCheckPos - body:position).
+        if toCheckAngle < bestAngle {
+            set bestGeoPos to geoPosToCheck.
+        }
+        if toCheckAngle < maxGroundAngle {
+            return geoPosToCheck.
+        }
+        //print "(" + x + "," + y + ")".
+        if x = y or (x < 0 and -x = y) or (x > 0 and x = 1-y) {
+            local dx_old to dx.
+            set dx to -dy.
+            set dy to dx_old.
+        }
+        set x to x + dx.
+        set y to y + dy.
+    }
+    print "no such spot available returning best i found, good luck :(".
+    return bestGeoPos.
+}
+
+
 function hover {
     parameter maxVertSpeed is 1.
     parameter maxHorizSpeed is 1.
     parameter path is list(list(ship:geoposition, alt:radar)).
+    parameter maxGroundAngle is 5.
     clearscreen.
 
     local pathIndex is 0.
@@ -111,13 +170,40 @@ function hover {
             set pathIndex to pathIndex + 1.
             return True.
         } else if pathIndex = path:length -1 {
+            local diverted to false.
+            if (not diverted) and vang(groundNormal(path[pathIndex][0]), ship:up:forevector) > maxGroundAngle {
+                print "emergency divert".
+                local currentSpot to path[pathIndex][0].
+                local newLandingSpot to findLandingSpotAround(currentSpot, maxGroundAngle).
+                if newLandingSpot:terrainheight > currentSpot:terrainHeight {
+                    path:add(list(currentSpot, newLandingSpot:terrainheight - currentSpot:terrainheight + 20)).
+                    path:add(list(newLandingSpot, 20)).
+                } else {
+                    path:add(list(newLandingSpot, currentSpot:terrainheight - newLandingSpot:terrainheight + 20)).
+                    path:add(list(newLandingSpot, 20)).
+                }
+                set nsPosPid:maxoutput to 20.
+                set nsPosPid:minoutput to -20.
+                set ewPosPid:maxoutput to 20.
+                set ewPosPid:minoutput to -20.
+                set pathIndex to pathIndex + 1.
+                set vertPosPid:maxoutput to 10.
+                set vertPosPid:minoutput to -10.
+                set diverted to true.
+                return True.  
+            }
             //wait for stuff to settle at last waypoint before descending
-            print nsPosPid:output at (0,2).
-            print ewPosPid:output at (0,3).
-            print nsPid:output at (0,4).
-            print ewPid:output at (0,5).
+            //print nsPosPid:output at (0,2).
+            //print ewPosPid:output at (0,3).
+            //print nsPid:output at (0,4).
+            //print ewPid:output at (0,5).
             if ship:velocity:surface:mag < 1 and abs(nsPosPid:output) < 0.01 and abs(nsPid:output) < 0.01 and abs(ewPosPid:output) < 0.01 and abs(ewPid:output) < 0.01 {
                 //land
+                print "blah".
+                set nsPosPid:maxoutput to 1.
+                set nsPosPid:minoutput to -1.
+                set ewPosPid:maxoutput to 1.
+                set ewPosPid:minoutput to -1.
                 set vertPosPid:maxoutput to 1.
                 set vertPosPid:minoutput to -1.
                 set height to -1.
@@ -157,7 +243,11 @@ function hover {
         wait 0.
     }
     print "done with loop".
-
+    print "locking steering to groundNormal and waiting 10 seconds for things to settle".
+    lock steering to unrotate(groundNormal(ship:geoposition)).
+    wait 10.
+    print "did my best, good luck staying upright".
+    unlock steering.  
     lock throttle to 0.
     set ship:control:pilotmainthrottle to 0.
 }

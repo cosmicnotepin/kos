@@ -1,5 +1,8 @@
 run once execNd.
 run once other.
+run once rendezvous.
+run once land.
+run once kruscht.
 
 function launchToCirc {
     parameter height is 85000.
@@ -86,5 +89,19 @@ function launchToCircVac {
     set stagingTriggerActive to False.
     set nd to node( time:seconds+eta:apoapsis, 0, 0, visViva(obt:apoapsis + obt:body:radius, obt:apoapsis + obt:body:radius)).
     execNd(nd).
+}
+
+function dockToStationVac {
+    askForTarget().
+    launchToCircVac(20000).
+    rendezvous(target, 10, "dock").
+}
+
+function dockFromLaunchpad {
+    askForTarget().
+    launchToCirc(75000).
+    rendezvous(target, 10, "dock").
+    deorbit(20000).
+    land().
 }
 

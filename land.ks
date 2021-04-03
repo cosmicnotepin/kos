@@ -25,7 +25,7 @@ function suicideBurn {
     set warp to 4.
     lock steering to unrotate(srfRetrograde:forevector).
     when stoppingDistance() - ship:verticalSpeed * 2 > distanceToGround() then {
-        set warp to 1.
+        kuniverse:timewarp:cancelwarp.
         return false.
     }
     until distanceToGround() < targetHeight {

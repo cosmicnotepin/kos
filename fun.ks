@@ -13,6 +13,10 @@ run once hover.
 run once land.
 run once trueanomaly.
 
+function saveMissionProgress {
+    kuniverse:quicksaveto("cmp").
+}
+
 function logShip {
     FOR P IN SHIP:PARTS {
         LOG ("modules for part named " + P:name) TO MODLIST.
@@ -69,7 +73,17 @@ function rendezvousFromLaunchpad {
 }
 
 function toMunmus {
-    print "asking for a minmus or mun here:".
+    print "AG1: mun".
+    print "AG2: minmus".
+    local currentAG1 to AG1.
+    local currentAG2 to AG2.
+    wait until AG1 <> currentAG1 or AG2 <> currentAG2.
+    if AG1 <> currentAG1 {
+        set target to mun.
+    }
+    if AG2 <> currentAG2 {
+        set target to minumus.
+    }
     askForTarget().
     launchToCirc().
     matchInclination(target).
@@ -79,7 +93,7 @@ function toMunmus {
     execNd().
     print "changing to target SOI".
     warpWait(time:seconds + obt:nextpatcheta + 60). //drop off 1 minute after transition
-    doScience().
+    //doScience().
     circAtPeriapsis().  
     print "at munmus circ orbit".
 }
@@ -99,15 +113,10 @@ function rescue {
     land().
 }
 
-function dockFromLaunchpad {
-    askForTarget().
-    launchToCirc(75000).
-    rendezvous(target, 10, "dock").
-    deorbit(20000).
-    land().
-}
-
 function go {
+    //groundNormal(ship:geoposition).
+    //print vang(groundNormal(body:geopositionOf(ship:position + north:forevector * 10)), ship:up:forevector).
+    //findLandingSpotAround(ship:geoposition, 5).
     //print "AG1 to go()".
     //local current to AG1.
     //wait until AG1 <> current.
@@ -115,8 +124,6 @@ function go {
     //wait 1.
     //dockFromLaunchpad().
     //finalApproach(target, "dock").
-    deorbit(20000).
-    land().
     //send(target, "blah").
     //rescue().
     //rendezvousFromLaunchpad().
@@ -127,7 +134,11 @@ function go {
     //launchToCirc(100000, true).
     //launchToCirc().
     //circAtApoapsis().
-    //toMunmus().
+    toMunmus().
+    //dockToStationVac().
+    //rendezvous(target, 10, "dock").
+    //toTargetAtSpeed(target,0).
+    //finalApproach(target, "dock").
     //print burnTime(875).
     //positionRelay().
     //circAtPeriapsis().

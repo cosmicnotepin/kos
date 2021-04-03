@@ -2,6 +2,7 @@ run once trueanomaly.
 run once execNd.
 run once other.
 run once warp.
+run once inclination.
 
 function matchApoapsis {
     Parameter tar.
@@ -132,6 +133,8 @@ function toTargetAtSpeed {
 function approachMainEngine {
     parameter tar.
     print "approach()".
+    //unless we totally cancel velocity first the code below can break for encounters with high
+    //relative velocities it seems
     toTargetAtSpeed(tar, 0).
 
     local lock dist to (tar:position - ship:position):mag.
@@ -176,28 +179,50 @@ function armGrapplingDevice {
     }
 }
 
+function receiveDockingPort { 
+    wait until not ship:messages:empty.
+    set received to ship:messages:pop.
+    print "docking port received".
+    local dpuid to received:content.
+    for p in target:parts {
+        if p:uid = dpuid {
+            return p.
+        }
+    }
+}
+    
 function send {
     parameter tar.
     parameter m.
     print "send()".
     set c to tar:connection.
     if c:sendmessage(m) {
-          print "message sent!".
+          print "message: " + m + " sent".
     }
 }
 
 function finalApproach {
     parameter tar.
-    parameter objective is "approach". //one of "approach", "dock", "grapple"
+    parameter objective is "approach". //one of "approach", "dock", todo: "grapple"
 
     local lock dist to (tar:position - ship:position):mag.
+    local selectedDP to "x".
+
+    if objective = "dock" {
+        list dockingports in dp.  
+        set selectedDP to dp[0].
+        send(tar, selectedDP:uid).
+        set tar to receiveDockingPort().
+        local lock dist to (tar:position - selectedDP:position):mag.
+    }
     lock steering to unrotate(tar:position).
+    lock steering to tar:position.
+
     wait until vang(tar:position, ship:facing:vector) < 0.25.
     //armGrapplingDevice().
     RCS on.
-    local lock tarVelVec to (ship:velocity:orbit - tar:velocity:orbit).
-
-    //send(tar, "lookAtMe").
+    local velBetwDockPorts to v(0,0,0).//(ship:velocity:orbit - tar:velocity:orbit).
+    local tarVelVec to v(0,0,0). //velBetwDockPorts.//
 
     local forePid to pidloop().
     set forePid:setpoint to 10.
@@ -217,18 +242,21 @@ function finalApproach {
     set topPid:maxoutput to 1.
     local lock topVel to vdot(tarVelVec, ship:facing * v(0,1,0)).
 
-    //local grappleModule to ship:partsnamed("GrapplingDevice")[0]:getmodule("ModuleGrappleNode").
     if objective = "approach" {
         when dist < 20 then {
             set forePid:setpoint to 0.
         }
     }
-    if objective = "dock" {
-        send(tar, "blah").
-    }
     local current to AG1.
     print "AG1 to stop auto-RCS".
-    until AG1 <> current {
+    local lastSampleTime to time:seconds.
+    local lastPosError to tar:position - selectedDP:position.
+    until AG1 <> current or selectedDP:state = "PreAttached" or not (selectedDP:state = "ready")  {
+        if (lastSampleTime < time:seconds) {
+            set tarVelVec to (lastPosError - (tar:position - selectedDP:position))/(time:seconds - lastSampleTime).
+        }
+        set lastSampleTime to time:seconds.
+        set lastPosError to tar:position - selectedDP:position.
         set forePid:setpoint to min(dist/10 + 0.1, 10).
         set ship:control:fore to forePid:update(time:seconds, foreVel).
         set ship:control:starboard to starPid:update(time:seconds, starVel).
@@ -250,7 +278,7 @@ function rendezvous {
     parameter tar.
     parameter maxWaitOrbits is 10.
     parameter objective is "approach".
-    print "rendevous()".
+    print "rendezvous()".
 
     matchInclination(tar).
 

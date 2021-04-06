@@ -92,6 +92,9 @@ function aeroBrakeReturn {
     local current to AG1.
     wait until AG1 <> current.
     execNd().
+    warpWait(time:seconds + obt:nextpatcheta + 60).
+    //todo broken for kerbin??!
+    //tunePeriapsis(10000).
     stage. 
     wait 1.
     stage.
@@ -99,7 +102,6 @@ function aeroBrakeReturn {
     stage.
     wait 1.
     lock steering to unrotate(retrograde:forevector).
-    warpWait(time:seconds + obt:nextpatcheta + 60).
     //find safe space outside atmosphere to warp to
     local t to 15.
     until (positionat(ship, time:seconds + eta:periapsis-t) - body:position):mag > 70000 + body:radius {

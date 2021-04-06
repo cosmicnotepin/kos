@@ -12,6 +12,7 @@ run once warp.
 run once hover.
 run once land.
 run once trueanomaly.
+run once missions.
 
 function saveMissionProgress {
     kuniverse:quicksaveto("cmp").
@@ -24,97 +25,9 @@ function logShip {
     }.
 }
 
-function goSomeWhereOnKerbin {
-    launchToCirc().
-    deorbit().
-    land().
-    doScience().
-    print "waiting for AG1".
-    set current to AG1.
-    wait until AG1 <> current.
-    print "welcome back".
-}
-
-function lowOrbitScience {
-    print "I HAVE CONTROL_".
-    launchToCirc(85000, false, 90).
-    doScience().
-    deorbit().
-    setCapsuleFree().
-    print "MISSION".
-    print "COMPL_".
-}
-
-function polarOrbitScience {
-    print "I HAVE CONTROL_".
-    launchToCirc(85000, false, 0).
-    checkScience().
-    local i to 0.
-    until i > 183 {
-        set i to i + 1.
-        warpWait(time:seconds + 60).
-        checkScience().
-        print i at (0,20).
-    }
-    deorbit().
-    land().
-    print "MISSION".
-    print "COMPL_".
-}
-
-function rendezvousFromLaunchpad {
-    print "I HAVE CONTROL_".
-
-    askForTarget().
-    launchToCirc(80000).
-    rendezvous(target).
-    print "MISSION".
-    print "COMPL_".
-}
-
-function toMunmus {
-    print "AG1: mun".
-    print "AG2: minmus".
-    local currentAG1 to AG1.
-    local currentAG2 to AG2.
-    wait until AG1 <> currentAG1 or AG2 <> currentAG2.
-    if AG1 <> currentAG1 {
-        set target to mun.
-    }
-    if AG2 <> currentAG2 {
-        set target to minumus.
-    }
-    askForTarget().
-    launchToCirc().
-    matchInclination(target).
-    print "set node for encounter, then AG1".
-    local current to AG1.
-    wait until AG1 <> current.
-    execNd().
-    print "changing to target SOI".
-    warpWait(time:seconds + obt:nextpatcheta + 60). //drop off 1 minute after transition
-    //doScience().
-    circAtPeriapsis().  
-    print "at munmus circ orbit".
-}
-
-
-function positionRelay {
-    print "this craft will lead target by 120 degrees".
-    askForTarget().
-    matchOrbitWithOffset(target, 120, 10). 
-}
-
-function rescue {
-    askForTarget().
-    launchToCirc(75000).
-    rendezvous(target).
-    deorbit(20000).
-    land().
-}
-
 function go {
     //groundNormal(ship:geoposition).
+    //warpToBetterAlignment(target, 10, 0).
     //print vang(groundNormal(body:geopositionOf(ship:position + north:forevector * 10)), ship:up:forevector).
     //findLandingSpotAround(ship:geoposition, 5).
     //print "AG1 to go()".
@@ -123,26 +36,25 @@ function go {
     //print "I HAVE CONTROL_".
     //wait 1.
     //dockFromLaunchpad().
-    //finalApproach(target, "dock").
-    //send(target, "blah").
+    //warpWait(time:seconds + eta:periapsis  - 600).
+    //panels off.
+    //warpWait(time:seconds + eta:periapsis).
+    //doScience().
     //rescue().
     //rendezvousFromLaunchpad().
     //rendezvousAtNextApoapsis(target).
-    //approachMainEngine(target).  
-    //finalApproach(target).  
     //launchToCirc(85000, true).
     //launchToCirc(100000, true).
-    //launchToCirc().
+    //launchToCirc(90000).
+    //launchToCircVac(15000).//minmus
     //circAtApoapsis().
-    toMunmus().
     //dockToStationVac().
     //rendezvous(target, 10, "dock").
-    //toTargetAtSpeed(target,0).
-    //finalApproach(target, "dock").
-    //print burnTime(875).
+    //rendezvous(target, 10, "approach").
+    deorbit().
+    land().
     //positionRelay().
     //circAtPeriapsis().
-    //launchToCircVac(15000).//minmus
     //KSOat(240).
     //hover(40, 1, list(list(ship:geoposition, 500), list(ship:geoposition, 20))).
     //hover(10, 20, list(list(waypoint("l1"):geoposition, waypoint("l1"):agl), list(waypoint("l2"):geoposition, waypoint("l2"):agl), list(waypoint("l3"):geoposition, waypoint("l3"):agl), list(waypoint("l4"):geoposition, waypoint("l4"):agl))).

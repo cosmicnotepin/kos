@@ -143,7 +143,7 @@ function execNd {
     local tset to 0.
     lock throttle to tset.
     local lastMag to nd:deltav:mag.
-    until nd:deltav:mag < 0.001 or (nd:deltav:mag > lastMag + 0.001 and nd:deltav:mag < 0.1)
+    until nd:deltav:mag < 0.001 or (nd:deltav:mag > lastMag + 0.001 and nd:deltav:mag < 0.5)
     {
         set max_acc to maxthrust/ship:mass.  
         if max_acc = 0 {

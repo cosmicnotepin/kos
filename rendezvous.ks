@@ -205,6 +205,12 @@ function finalApproach {
     parameter tar.
     parameter objective is "approach". //one of "approach", "dock", todo: "grapple"
 
+
+    if objective = "approach" {
+        toTargetAtSpeed(tar, 0).
+        return.
+    }
+
     local lock dist to (tar:position - ship:position):mag.
     local selectedDP to "x".
 
@@ -242,11 +248,6 @@ function finalApproach {
     set topPid:maxoutput to 1.
     local lock topVel to vdot(tarVelVec, ship:facing * v(0,1,0)).
 
-    if objective = "approach" {
-        when dist < 20 then {
-            set forePid:setpoint to 0.
-        }
-    }
     local current to AG1.
     print "AG1 to stop auto-RCS".
     local lastSampleTime to time:seconds.

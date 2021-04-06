@@ -81,16 +81,21 @@ function hover {
     local lock posTarOff to geoPosOff:altitudeposition(geoPosOff:terrainheight + height).
     local lock posError to posTarOff - ship:position.
 
+    local velP to 0.2. //fine for mun
+    if obt:body = minmus {
+        set velP to 0.6.
+    }
+
     local ewPosPid to pidloop(0.2, 0, 0.4, -maxHorizSpeed, maxHorizSpeed).
     set ewPosPid:setpoint to 0.
 
-    local ewPid to pidloop(0.2, 0, 0, -1, 1).
+    local ewPid to pidloop(velP, 0, 0, -1, 1).
     set ewPid:setpoint to 0. //positive means go east
 
     local nsPosPid to pidloop(0.2, 0, 0.4, -maxHorizSpeed, maxHorizSpeed).
     set nsPosPid:setpoint to 0.
 
-    local nsPid to pidloop(0.2, 0, 0, -1, 1).
+    local nsPid to pidloop(velP, 0, 0, -1, 1).
     set nsPid:setpoint to 0. //positive means go north
 
     local vertPosPid to pidloop(1, 0, 1, -maxVertSpeed, maxVertSpeed).
@@ -109,7 +114,7 @@ function hover {
     local lock maxHorizThrustHover to (1 - (fgh()/ship:availablethrust)^2)^(1/2).
     //max horizontal thrust that can be requested without interfering with altitude control's current
     //thrust request
-    local lock maxHorizThrustNow to (1 - min(1, (tset + fgh()/ship:availablethrust)^2))^(1/2).
+    local lock maxHorizThrustNow to (1 - min(1, (tset + fgh()/(ship:availablethrust + 0.0000001))^2))^(1/2).
 
     local lock ewVel to vdot(ship:velocity:surface, eastVec).
     local lock nsVel to vdot(ship:velocity:surface, ship:north:forevector).
@@ -245,10 +250,10 @@ function hover {
     print "done with loop".
     print "locking steering to groundNormal and waiting 10 seconds for things to settle".
     lock steering to unrotate(groundNormal(ship:geoposition)).
+    lock throttle to 0.
     wait 10.
     print "did my best, good luck staying upright".
     unlock steering.  
-    lock throttle to 0.
     set ship:control:pilotmainthrottle to 0.
 }
 

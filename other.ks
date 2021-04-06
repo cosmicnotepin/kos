@@ -39,6 +39,27 @@ function unrotate {
     return lookdirup(vec, ship:facing:topvector).
 }
 
+//to be used before capture burn
+function tunePeriapsis {
+    parameter targetOrbitHeight.
+    print "tuning periapsis to: " + targetOrbitHeight.
+    local lock normalUpVec to vcrs(ship:velocity:orbit, -body:position).
+    local lock radialInVec to vcrs(ship:velocity:orbit, normalUpVec).
+    if obt:periapsis < targetOrbitHeight - 1000 {
+        lock steering to unrotate(-radialInVec).  
+        wait until vang(-radialInVec, ship:facing:vector) < 0.25.
+    }
+    if obt:periapsis > targetOrbitHeight + 1000 {
+        lock steering to unrotate(radialInVec).  
+        wait until vang(radialInVec, ship:facing:vector) < 0.25.
+    }
+    //local maxAccel to ship:availableThrust/ship:mass.
+    lock throttle to max(1, abs(obt:periapsis - targetOrbitHeight)/1000).
+    wait until abs(obt:periapsis - targetOrbitHeight) < 500.
+    lock throttle to 0.
+    print "periapsis error: " + (obt:periapsis - targetOrbitHeight).
+}
+
 function circAtPeriapsis {
     print "circAtPeriapsis()".
     local y to obt:body:mu.

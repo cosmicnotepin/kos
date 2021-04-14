@@ -47,4 +47,13 @@ function radiusAtTrueAnomaly {
     return r.
 }
 
+function trueAnomalyAtRadius {
+    parameter tar.
+    parameter r.
+    local ecc is tar:orbit:eccentricity.
+    local sma is tar:orbit:semimajoraxis.
+    local ta is arccos((((sma*(1- ecc^2))/r) - 1)/ecc).
+    return ta.
+}
+
 

@@ -36,10 +36,20 @@ function go {
     //print "I HAVE CONTROL_".
     //wait 1.
     //dockFromLaunchpad().
-    //warpWait(time:seconds + eta:periapsis  - 600).
-    //panels off.
-    //warpWait(time:seconds + eta:periapsis).
-    //doScience().
+    //warpWait(time:seconds + eta:periapsis  - 
+    //local ta to trueAnomalyAtRadius(ship, body:radius). 
+    //print ta.
+    //print timeToTrueAnomaly(ship, ta).
+
+    //local lock blah to 1.
+    //print blah.
+    //if true {
+    //    local lock blah to 2.
+    //    print blah.
+    //}
+    //print blah.
+
+    //print obt:period.
     //rescue().
     //rendezvousFromLaunchpad().
     //rendezvousAtNextApoapsis(target).
@@ -50,9 +60,31 @@ function go {
     //circAtApoapsis().
     //dockToStationVac().
     //rendezvous(target, 10, "dock").
-    //rendezvous(target, 10, "approach").
-    deorbit().
-    land().
+    //finalApproach(target, "dock").
+    //print burnTime(50).
+    //set tar to target.
+    hover(20,20, list(list(ship:geoposition, waypoint("wp1"):agl), list(waypoint("wp1"):geoposition, waypoint("wp1"):agl + 10))).
+    //until false {
+    //    print ship:control:pilotpitch.
+    //    wait 0.
+    //}
+
+
+    //set objective to "grapple".
+    //warpToBetterAlignment(tar, 10).
+    //                                           
+    //rendezvousAtNextApoapsis(tar, 0, 0).
+    //                                           
+    //approachMainEngine(tar).  
+    //                                           
+    //finalApproach(tar, objective).  
+
+
+
+
+
+    //deorbit(20000, true).
+    //land().
     //positionRelay().
     //circAtPeriapsis().
     //KSOat(240).

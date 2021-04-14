@@ -3,9 +3,7 @@ wait 0.1.
 core:part:getmodule("kosprocessor"):doevent("open terminal").
 clearscreen.
 
-if status = "prelaunch" {
-    run once fun.
-} else { 
+if not (status = "prelaunch") {
     run once other.
     print "waiting for message".
     when not ship:messages:empty then {

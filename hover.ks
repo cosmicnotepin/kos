@@ -84,6 +84,8 @@ function hover {
     local velP to 0.2. //fine for mun
     if obt:body = minmus {
         set velP to 0.6.
+    } else if obt:body = kerbin {
+        set velP to 0.05.
     }
 
     local ewPosPid to pidloop(0.2, 0, 0.4, -maxHorizSpeed, maxHorizSpeed).

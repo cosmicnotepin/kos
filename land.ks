@@ -8,6 +8,7 @@ function distanceToGround {
 }
 
 function stoppingDistance {
+    parameter vel.
     //assuming thrusting straight down
     //assuming constant gravity
     // s = -(1/2)*a*t^2 + v_0*t
@@ -15,6 +16,17 @@ function stoppingDistance {
     // s = (v_0^2)/(2*a)
   local grav is constant:g * (body:mass / body:radius^2). // gravity at 0 meters
   local maxDeceleration is (ship:availableThrust / ship:mass) - grav.
+  return vel^2 / (2 * maxDeceleration).
+}
+
+function stoppingDistanceCurAngle {
+    //assuming thrusting at current orientation
+    //assuming constant gravity
+    // s = -(1/2)*a*t^2 + v_0*t
+    // t = v_0/a
+    // s = (v_0^2)/(2*a)
+  local grav is constant:g * (body:mass / body:radius^2). // gravity at 0 meters
+  local maxDeceleration is cos(vang(ship:up:forevector, srfRetrograde:forevector)) * (ship:availableThrust / ship:mass) - grav.
   return ship:verticalSpeed^2 / (2 * maxDeceleration).
 }
 
@@ -24,12 +36,12 @@ function suicideBurn {
     set warpmode to "physics".
     set warp to 4.
     lock steering to unrotate(srfRetrograde:forevector).
-    when stoppingDistance() - ship:verticalSpeed * 2 > distanceToGround() then {
+    when stoppingDistanceCurAngle() - ship:verticalSpeed * 2 > distanceToGround() then {
         kuniverse:timewarp:cancelwarp.
         return false.
     }
     until distanceToGround() < targetHeight {
-        if stoppingDistance() - ship:verticalSpeed * 2 > distanceToGround() {
+        if stoppingDistanceCurAngle() - ship:verticalSpeed * 2 > distanceToGround() {
             set throttle to 1.
         } else {
             set throttle to 0.

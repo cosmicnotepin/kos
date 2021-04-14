@@ -1,3 +1,4 @@
+//does every experiment type once
 function doScience {
     parameter transmit is false.
 
@@ -7,10 +8,15 @@ function doScience {
         print "collecting science".
     }
 
+    local doneBefore to list().
+    local scienceBox to "x".
     bays on.
     //wait 2.
     for p in ship:parts {
         if p:hasmodule("ModuleScienceExperiment") {
+            if not (doneBefore:find(p:name) = -1) {
+                break.
+            }
             print p:name.
             set sm to p:getmodule("ModuleScienceExperiment").
             if not sm:inoperable {
@@ -24,13 +30,18 @@ function doScience {
                     sm:transmit.
                 }
             }
+            doneBefore:add(p:name).
         } 
+        //remenmber science collector for later
+        if p:hasmodule("ModuleScienceContainer") {
+            set scienceBox to p.
+        }
     }
 
     if not transmit {
-        local expStorUnit to ship:partsnamed("ScienceBox")[0].
-        expStorUnit:getmodule("ModuleScienceContainer"):doaction("collect all", true).
+        scienceBox:getmodule("ModuleScienceContainer"):doaction("collect all", true).  
     }
+
     bays off.
     //wait 2.
     print "experiments done".

@@ -170,13 +170,18 @@ function approachMainEngine {
 
 function armGrapplingDevice {
     print"armGrapplingDevice()".
-    local p to ship:partsnamed("GrapplingDevice")[0].
+    local ps to ship:partsnamed("GrapplingDevice").
+    for p in ship:partsnamed("smallClaw") {
+        ps:add(p).
+    }
+    local p to ps[0].
     local m to p:getmodule("ModuleAnimateGeneric").
     if m:hasevent("arm") {
         m:doevent("arm").
     } else {
         print "arming GrapplingDevice failed".
     }
+    return p.
 }
 
 function receiveDockingPort { 
@@ -208,27 +213,34 @@ function finalApproach {
 
     if objective = "approach" {
         toTargetAtSpeed(tar, 0).
+        print "AG1 to continue mission after finalApproach()".
+        local current to AG1.
+        wait until AG1 <> current.
         return.
     }
 
     local lock dist to (tar:position - ship:position):mag.
     local selectedDP to "x".
+    lock refPos to ship:position. //used for grappling
+    local grapplingDevMod to "x".
 
     if objective = "dock" {
         list dockingports in dp.  
         set selectedDP to dp[0].
+        lock refPos to selectedDP:position. //Todo test this
         send(tar, selectedDP:uid).
         set tar to receiveDockingPort().
         local lock dist to (tar:position - selectedDP:position):mag.
+    } else if objective = "grapple" { 
+        set grapplingDevMod to armGrapplingDevice():getmodule("ModuleGrappleNode").
     }
     lock steering to unrotate(tar:position).
     lock steering to tar:position.
 
     wait until vang(tar:position, ship:facing:vector) < 0.25.
-    //armGrapplingDevice().
     RCS on.
-    local velBetwDockPorts to v(0,0,0).//(ship:velocity:orbit - tar:velocity:orbit).
-    local tarVelVec to v(0,0,0). //velBetwDockPorts.//
+    local velBetwDockPorts to v(0,0,0).
+    local tarVelVec to v(0,0,0).
 
     local forePid to pidloop().
     set forePid:setpoint to 10.
@@ -249,16 +261,24 @@ function finalApproach {
     local lock topVel to vdot(tarVelVec, ship:facing * v(0,1,0)).
 
     local current to AG1.
-    print "AG1 to stop auto-RCS".
     local lastSampleTime to time:seconds.
-    local lastPosError to tar:position - selectedDP:position.
-    until AG1 <> current or selectedDP:state = "PreAttached" or not (selectedDP:state = "ready")  {
+    local lastPosError to tar:position - refPos.
+
+    lock cond to true.
+    if objective = "grapple" {
+        lock cond to grapplingDevMod:hasevent("release").
+    } else if objective = "dock" {
+        lock cond to selectedDP:state = "PreAttached" or not (selectedDP:state = "ready").
+    }
+    print cond.
+
+    until cond {
         if (lastSampleTime < time:seconds) {
-            set tarVelVec to (lastPosError - (tar:position - selectedDP:position))/(time:seconds - lastSampleTime).
+            set tarVelVec to (lastPosError - (tar:position - refPos))/(time:seconds - lastSampleTime).
         }
         set lastSampleTime to time:seconds.
-        set lastPosError to tar:position - selectedDP:position.
-        set forePid:setpoint to min(dist/10 + 0.1, 10).
+        set lastPosError to tar:position - refPos.
+        set forePid:setpoint to min(dist/30 + 0.1, 10).
         set ship:control:fore to forePid:update(time:seconds, foreVel).
         set ship:control:starboard to starPid:update(time:seconds, starVel).
         set ship:control:top to topPid:update(time:seconds, topVel).
@@ -269,9 +289,7 @@ function finalApproach {
     unlock steering.
     rcs off.
     sas off.
-    print "AG1 to continue mission after finalApproach()".
-    local current to AG1.
-    wait until AG1 <> current.
+    wait 1.
 }
 
 

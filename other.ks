@@ -100,6 +100,75 @@ function askForTarget {
     wait until hastarget.
 }
 
+function deorbit {
+    parameter periapsis is 20000.
+    parameter now is true.
+    local nodeTime to time:seconds + 15.
+    local dv to visViva(ship:altitude + body:radius, (ship:altitude + 2*body:radius + periapsis)/2).
+    if now = false {
+        set nodeTime to time:seconds + eta:apoapsis.
+        set dv to visViva(body:radius + obt:apoapsis, (obt:apoapsis + 2*body:radius + periapsis)/2).
+    }
 
-//local vd to vecdraw({return ship:position.}, {return steering:forevector*20.}).
-//set vd:show to true.
+    set nd to node( nodeTime, 0, 0, dv ).
+    execNd(nd).
+}
+
+function land {
+    //tries to stage the deorbit engine and a heatshield
+    set warpmode to "rails".
+    set warp to 4.
+    wait until altitude < 70000.
+    set warpmode to "physics".
+    set warp to 4.
+    wait until kuniverse:timewarp:issettled.
+
+    lock steering to unrotate(srfretrograde:forevector).
+    wait 2.
+    stage.
+    wait 2.
+    stage.
+    when (not chutessafe) then {
+        chutessafe on.
+        return (not chutes).
+    }
+    wait until chutes.
+    local randomChute to ship:modulesnamed("ModuleParachute")[0].
+    wait until alt:radar < randomChute:getfield("altitude").
+    wait 2.
+    kuniverse:timewarp:cancelwarp.
+    wait 2.
+    for dcm in ship:modulesnamed("ModuleDecouple") {
+        for ev in dcm:alleventnames {
+            if ev = "jettison heat shield" {
+                dcm:doevent("jettison heat shield").
+            }
+        }
+    }
+    wait 2.
+    legs on.
+    set warpmode to "physics".
+    set warp to 4.
+    wait until alt:radar < 15.
+    kuniverse:timewarp:cancelwarp.
+    wait until status = "splashed" or status = "landed".
+    print status.
+}
+
+function setCapsuleFree {
+    //tries to stage the deorbit engine and a heatshield
+    set warpmode to "rails".
+    set warp to 4.
+    wait until altitude < 70000.
+    set warpmode to "physics".
+    set warp to 4.
+
+    lock steering to unrotate(srfretrograde).
+    chutes on.
+    wait 1.
+    stage.
+    wait until alt:radar < 15.
+    kuniverse:timewarp:cancelwarp.
+    wait until status = "splashed" or status = "landed".
+    print status.
+}

@@ -111,9 +111,10 @@ function positionRelay {
 }
 
 function rescue {
+    parameter rendezvousType.
     askForTarget().
     launchToCirc(75000).
-    rendezvous(target, 10, "approach").
-    deorbit(20000).
+    rendezvous(target, 10, rendezvousType).
+    deorbit(20000, true).
     land().
 }

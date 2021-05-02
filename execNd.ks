@@ -68,8 +68,6 @@ function burnTime {
                 engines[s]:add(e).
             }
         }
-        //TODO if engines[s]:length > 0
-        // Ion engine circdv??
 
         if engines[s]:length > 0 {
             set ve[s] to engines[s][0]:visp*g0.

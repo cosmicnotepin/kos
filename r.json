@@ -1,0 +1,5041 @@
+{
+"items": [
+{
+"value": 111.561,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 111.5668,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 111.5756,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 111.5892,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 111.6105,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 111.6444,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 111.6999,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 111.7935,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 111.9568,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 112.254,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 112.8172,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 113.9281,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 116.1971,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 120.9728,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 131.2763,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 153.9766,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 204.9453,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 294.3679,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 416.3643,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 476.1898,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 488.9469,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 491.0242,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 491.1614,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 491.1835,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 491.1858,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 491.1862,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 491.1865,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 491.1869,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 491.1873,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 491.188,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 491.1891,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 491.1907,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 491.1931,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 491.1966,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 491.202,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 491.21,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 491.2221,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 491.2402,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 491.2673,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 491.308,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 491.3691,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 491.4607,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 491.5982,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 491.8044,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 492.1139,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 492.5784,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 493.2756,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 494.3229,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 495.8967,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 498.264,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 501.83,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 507.2128,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 515.3631,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 527.7601,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 544.3994,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 562.3761,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 581.1042,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 582.7529,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 582.7712,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 582.7716,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 582.772,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 582.7723,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 582.7728,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 582.7736,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 582.7748,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 582.7765,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 582.7791,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 582.783,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 582.7888,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 582.7975,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 582.8106,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 582.8303,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 582.8598,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 582.904,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 582.9704,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 583.07,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 583.2194,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 583.4435,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 583.7798,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 584.2845,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 585.0421,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 586.1797,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 587.889,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 590.4594,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 594.3293,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 600.1666,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 608.9955,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 622.4036,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 642.8879,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 672.6389,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 705.6524,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 740.698,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 777.6312,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 816.5098,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 857.4329,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 900.5133,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 945.8736,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 993.6458,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 998.9739,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 999.8338,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 999.9723,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 999.9946,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 999.9991,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 999.9998,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1000.0009,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1000.0019,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1000.0034,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1000.0055,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1000.0088,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1000.0138,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1000.0212,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1000.0323,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1000.0489,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1000.0739,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1000.1113,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1000.1675,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1000.2517,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1000.3781,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1000.5677,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1000.8521,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1001.2789,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1001.9193,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1002.8804,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1004.3233,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1006.4903,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1009.7469,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1014.6454,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1022.0239,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1033.1607,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1050.022,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1075.6659,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1114.9273,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1169.9571,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1231.0359,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1296.3871,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1365.9504,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1439.9956,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1518.8851,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1603.0407,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1692.9491,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1789.1763,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1892.3904,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1980.8738,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1999.7331,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1999.9948,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 1999.9993,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2000.0029,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2000.0061,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2000.0108,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2000.0179,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2000.0285,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2000.0444,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2000.0682,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2000.104,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2000.1577,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2000.2382,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2000.3589,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2000.5401,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2000.8119,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2001.2195,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2001.8312,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2002.7489,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2004.1259,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2006.1927,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2009.2955,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2013.9557,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2020.9595,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2031.4957,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2047.3685,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2071.332,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2107.6253,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2162.8498,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2247.4587,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2378.3805,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2538.1057,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2720.9522,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2934.808,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2990.8372,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2999.9232,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2999.9877,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 2999.998,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3000.0047,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3000.0104,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3000.019,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3000.0319,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3000.0513,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3000.0803,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3000.1239,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3000.1892,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3000.2871,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3000.4341,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3000.6545,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3000.9852,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3001.4812,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3002.2254,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3003.3419,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3005.0172,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3007.5312,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3011.3049,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3016.9712,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3025.4838,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3038.2823,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3057.5465,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3086.5924,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3130.4983,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3197.1164,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3298.7546,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3455.0707,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3689.008,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3945.0117,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3999.7118,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3999.9609,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3999.993,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 3999.9994,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4000.0091,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4000.0176,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4000.0302,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4000.0492,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4000.0776,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4000.1203,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4000.1843,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4000.2804,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4000.4244,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4000.6405,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4000.9647,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4001.4509,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4002.1804,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4003.2748,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4004.9167,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4007.3804,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4011.0777,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4016.6279,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4024.9625,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4037.4853,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4056.3165,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4084.6695,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4127.4375,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4192.1265,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4290.3685,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4440.4513,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4671.6964,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4948.5585,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4997.6006,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4999.6777,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4999.9454,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 4999.9993,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5000.0137,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5000.0263,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5000.045,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5000.0732,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5000.1154,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5000.1787,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5000.2737,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5000.4163,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5000.63,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5000.9507,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5001.4317,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5002.1533,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5003.2359,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5004.86,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5007.2967,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5010.9533,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5016.4412,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5024.6804,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5037.0553,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5055.6538,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5083.6332,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5125.7857,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5189.4274,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5285.8181,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5432.4912,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5657.1905,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5968.0781,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5997.0846,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5999.4804,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5999.9628,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 5999.9946,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6000.0151,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6000.0328,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6000.0593,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6000.099,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6000.1587,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6000.2481,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6000.3822,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6000.5834,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6000.8853,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6001.338,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6002.0172,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6003.0361,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6004.5646,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6006.8578,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6010.2986,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6015.4622,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6023.2127,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6034.8502,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6052.3328,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6078.6159,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6118.1736,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6177.8096,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6267.9368,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6404.6399,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6613.0909,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6775.941,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6786.7685,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6788.9496,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6789.1745,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6789.1893,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6789.1904,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6789.1913,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6789.1926,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6789.1947,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6789.1977,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6789.2023,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6789.2092,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6789.2195,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6789.2349,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6789.2581,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6789.2929,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6789.3451,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6789.4234,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6789.5408,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6789.7169,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6789.9811,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6790.3775,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6790.9719,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6791.8637,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6793.2014,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6795.2082,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6798.2188,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6802.7357,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6809.5133,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6819.6847,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6834.9529,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6857.8803,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6892.3277,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6944.1251,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6993.9923,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6999.1404,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6999.9697,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 6999.9977,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7000.0092,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7000.019,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7000.0337,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7000.0557,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7000.0888,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7000.1385,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7000.2129,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7000.3246,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7000.4922,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7000.7435,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7001.1205,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7001.686,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7002.5343,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7003.8068,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7005.7157,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7008.5795,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7012.8762,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7019.3234,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7028.999,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7043.5233,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7065.334,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7098.1047,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7147.3832,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7221.5751,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7333.4748,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7502.6838,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7759.4972,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7959.1167,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7999.5514,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 7999.9994,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8000.0304,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8000.0569,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8000.0968,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8000.1567,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8000.2464,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8000.381,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8000.5829,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8000.8858,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8001.3402,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8002.0217,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8003.044,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8004.5776,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8006.8783,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8010.3298,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8015.5081,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8023.2783,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8034.9395,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8052.4445,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8078.7317,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8118.2289,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8177.6239,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8267.0489,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8401.9265,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8605.8781,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8915.3834,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8993.9313,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8999.1223,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8999.9585,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8999.9938,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 8999.9995,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9000.008,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9000.0159,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9000.0277,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9000.0454,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9000.0719,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9000.1117,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9000.1714,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9000.2609,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9000.3952,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9000.5966,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9000.8987,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9001.352,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9002.0318,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9003.0516,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9004.5814,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9006.8764,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9010.3192,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9015.4846,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9023.235,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9034.8659,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9052.3244,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9078.539,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9117.9214,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9177.1305,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9266.2463,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9400.5923,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9603.597,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9911.3541,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9989.4018,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9999.4754,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9999.9008,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9999.9864,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9999.9974,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 9999.9999,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10000.0037,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10000.0073,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10000.0127,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10000.0209,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10000.0331,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10000.0515,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10000.079,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10000.1203,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10000.1822,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10000.2751,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10000.4145,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10000.6235,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10000.9371,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10001.4074,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10002.1129,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10003.1712,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10004.7588,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10007.1404,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10010.7133,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10016.0739,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10024.1173,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10036.1882,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10054.3078,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10081.5166,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10122.3961,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10183.8635,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10276.3961,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10415.933,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10626.8727,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 10946.8708,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 11434.6343,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 11911.2118,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 11988.699,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 11998.6975,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 11999.986,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 11999.9974,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12000.0067,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12000.0147,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12000.0267,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12000.0447,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12000.0717,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12000.1123,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12000.1731,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12000.2643,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12000.4012,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12000.6064,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12000.9143,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12001.3761,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12002.0688,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12003.108,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12004.6668,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12007.0052,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12010.5132,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12015.7762,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12023.6727,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12035.5223,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12053.3073,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12080.0086,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12120.1142,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12180.3925,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12271.0785,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12407.7053,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12613.9713,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 12926.2857,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 13401.0866,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 13980.367,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 13998.002,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 13999.8203,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 13999.9702,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 13999.9944,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 13999.9993,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14000.0066,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14000.0134,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14000.0236,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14000.0389,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14000.0618,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14000.0962,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14000.1478,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14000.2253,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14000.3415,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14000.5157,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14000.7771,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14001.1692,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14001.7573,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14002.6395,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14003.9628,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14005.948,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14008.9259,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14013.3934,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14020.096,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14030.1528,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14045.2445,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14067.8969,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14101.9086,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14153.0005,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14229.8047,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14345.3824,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14519.5753,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14782.6914,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14986.2221,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14999.693,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 14999.9843,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 15000.4212,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 15000.8106,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 15001.3947,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 15002.2709,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 15003.5852,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 15005.5568,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 15008.5144,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 15012.9513,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 15019.6078,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 15029.5949,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 15044.5812,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 15067.073,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 15100.8387,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 15151.55,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 15227.7571,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 15342.3808,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 15515.0118,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 15775.4934,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 15976.7656,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 15997.5719,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 15999.7172,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 15999.9936,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 15999.9996,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16000.0087,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16000.0171,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16000.0298,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16000.0489,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16000.0774,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16000.1203,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16000.1845,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16000.2809,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16000.4255,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16000.6423,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16000.9676,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16001.4555,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16002.1874,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16003.2853,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16004.9322,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16007.4028,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16011.1089,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16016.6689,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16025.0106,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16037.5272,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16056.3109,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16084.5063,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16126.8444,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16190.4517,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16286.0873,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16430.0417,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16647.0861,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 16975.1071,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 17472.4949,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 17955.7976,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 17995.8983,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 17999.2068,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 17999.8729,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 17999.9802,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 17999.9975,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18000.0155,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18000.0312,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18000.0548,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18000.0901,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18000.1432,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18000.2227,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18000.342,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18000.521,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18000.7895,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18001.1922,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18001.7963,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18002.7025,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18004.0617,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18006.1007,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18009.1595,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18013.748,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18020.6318,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18030.96,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18046.4576,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18069.7159,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18104.6303,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18157.0622,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18235.8454,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18354.3226,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18532.7126,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 18801.7928,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 19208.7049,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 19826.2322,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 19972.6798,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 19996.3089,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 19999.3544,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 19999.9675,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 19999.9999,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20000.0257,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20000.0478,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20000.081,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20000.1307,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20000.2053,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20000.3172,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20000.4851,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20000.7369,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20001.1146,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20001.6812,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20002.5311,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20003.8059,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20005.7182,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20008.5869,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20012.8902,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20019.3461,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20029.0317,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20043.5644,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20065.3727,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20098.1063,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20147.2541,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20221.0818,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20332.0612,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20499.0607,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20750.7401,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20993.6651,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20998.9305,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 20999.9906,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21000.1386,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21000.2674,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21000.4606,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21000.7504,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21001.1851,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21001.8371,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21002.8152,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21004.2824,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21006.4833,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21009.7847,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21014.7374,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21022.1674,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21033.3146,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21050.0405,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21075.1407,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21112.8166,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21169.3877,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21254.3728,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21382.1376,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21574.4255,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21864.2794,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21978.7159,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21997.1713,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21999.5497,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21999.9328,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 21999.9945,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 22000.0271,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 22000.0553,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 22000.0976,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 22000.161,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 22000.2562,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 22000.399,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 22000.6132,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 22000.9344,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 22001.4163,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 22002.1392,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 22003.2235,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 22004.85,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 22007.2898,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 22010.9498,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 22016.4404,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 22024.6775,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 22037.0359,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 22055.5798,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 22083.4095,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 22125.1855,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 22187.92,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 22282.1797,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 22423.923,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 22637.3271,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 22959.1876,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 23445.8524,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 23917.322,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 23993.6412,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 23999.9395,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 23999.9952,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 24000.0397,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 24000.0778,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 24000.1349,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 24000.2206,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 24000.3491,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 24000.5419,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 24000.831,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 24001.2648,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 24001.9154,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 24002.8914,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 24004.3554,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 24006.5515,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 24009.8458,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 24014.7876,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 24022.2013,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 24033.3238,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 24050.0122,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 24075.0551,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 24112.6425,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 24169.0755,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 24253.8417,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 24381.2519,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 24572.9513,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 24861.8021,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 25297.9665,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 25958.5754,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 25993.6485,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 25999.2993,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 25999.8818,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 25999.9991,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 26000.0493,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 26000.0932,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 26000.1589,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 26000.2575,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 26000.4055,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 26000.6274,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 26000.9602,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 26001.4595,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 26002.2084,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 26003.3318,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 26005.017,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 26007.5448,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 26011.3367,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 26017.0251,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 26025.5588,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 26038.3619,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 26057.572,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 26086.3997,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 26129.6694,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 26194.6371,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 26292.2306,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 26438.9388,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 26659.7123,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 26992.4591,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 27495.1026,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 27981.5537,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 27998.0506,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 27999.7514,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 27999.9705,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 27999.9988,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 28000.0411,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 28000.0806,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 28000.1398,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 28000.2287,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 28000.362,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 28000.5619,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 28000.8617,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 28001.3115,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 28001.9863,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 28002.9984,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 28004.5165,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 28006.7939,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 28010.2101,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 28015.3347,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 28023.0225,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 28034.556,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 28051.8605,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 28077.8267,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 28116.7972,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 28175.3006,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 28263.163,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 28395.197,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 28593.7867,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 28892.8761,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 29344.1964,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 29889.9833,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 29978.3127,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 29996.1099,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 29999.6935,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 29999.989,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 30000.0286,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 30000.0625,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 30000.1133,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 30000.1896,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 30000.3039,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 30000.4755,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 30000.7328,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 30001.1189,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 30001.6979,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 30002.5665,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 30003.8694,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 30005.8238,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 30008.7554,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 30013.1533,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 30019.7506,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 30029.648,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 30044.4971,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 30066.7779,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 30100.2147,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 30150.4052,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 30225.7704,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 30338.9964,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 30509.2361,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 30765.4943,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 31151.8957,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 31736.0032,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 32622.2192,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 33973.9191,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 34821.5543,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 34993.4222,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 34999.2345,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 34999.9835,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 35000.0645,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 35000.1342,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 35000.2387,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 35000.3955,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 35000.6307,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 35000.9835,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 35001.5127,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 35002.3066,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 35003.4974,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 35005.2835,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 35007.9629,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 35011.9822,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 35018.0115,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 35027.0566,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 35040.6263,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 35060.9861,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 35091.537,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 35137.3891,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 35206.2247,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 35309.6079,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 35464.9742,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 35698.6795,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 36050.7134,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 36582.0849,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 37386.6191,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 38610.2827,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 39844.234,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 39977.1366,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 39998.5635,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 39999.9773,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 40000.1033,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 40000.213,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 40000.3774,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 40000.624,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 40000.994,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 40001.5489,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 40002.3814,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 40003.63,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 40005.5031,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 40008.3127,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 40012.5274,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 40018.8498,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 40028.3345,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 40042.5639,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 40063.913,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 40095.9483,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 40144.0274,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 40216.2047,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 40324.603,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 40487.4983,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 40732.5131,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 41101.5518,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 41658.5393,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 41933.8267,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 41989.3707,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 41998.3206,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 41999.7621,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 42001.9245,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 42003.8283,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 42006.6841,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 42010.9679,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 42017.3941,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 42027.0345,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 42041.4974,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 42063.1968,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 42095.7577,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 42144.6253,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 42217.9859,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 42328.1602,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 42493.7224,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 42742.744,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 43117.8095,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 43683.8805,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 44540.8855,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 44965.6358,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 44993.7391,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 44999.3983,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 44999.9816,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 45000.2187,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 45000.4211,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 45000.7247,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 45001.1801,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 45001.8631,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 45002.8877,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 45004.4246,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 45006.7301,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 45010.1884,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 45015.3762,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 45023.1585,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 45034.8334,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 45052.3492,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 45078.6306,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 45118.0698,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 45177.2672,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 45266.1505,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 45399.6717,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 45600.3968,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 45902.4865,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 46357.8923,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 47046.1711,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 48090.4344,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 49503.4166,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 49703.0122,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 49743.2598,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 49749.7442,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 49751.8501,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 49753.6459,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 49756.3395,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 49760.3802,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 49766.4416,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 49775.5346,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 49789.1762,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 49809.6432,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 49840.354,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 49886.4435,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 49955.6303,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 49998.17,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 49999.9666,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 50000.2752,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 50000.5423,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 50000.9428,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 50001.5437,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 50002.445,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 50003.7969,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 50005.8249,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 50008.8669,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 50013.4302,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 50020.2757,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 50030.5451,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 50045.9519,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 50069.068,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 50103.7556,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 50155.8173,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 50233.9781,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 50351.3734,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 50527.8141,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 50793.2624,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 51193.2214,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 51797.2335,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 52712.6082,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 54080.8134,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 54832.9679,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 54985.3439,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 54997.9237,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 54999.95,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 55000.393,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 55000.7789,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 55001.3579,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 55002.2263,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 55003.5289,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 55005.4829,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 55008.414,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 55012.8108,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 55019.4066,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 55029.3014,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 55044.1462,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 55066.4192,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 55099.8416,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 55150.0046,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 55225.3153,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 55338.4304,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 55508.4401,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 55764.2183,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 56149.6208,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 56731.6885,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 57613.9189,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 58958.5568,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 59887.1832,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 59979.6473,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 59998.2779,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 59999.8145,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 60000.6359,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 60001.3519,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 60002.426,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 60004.0372,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 60006.454,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 60010.0794,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 60015.5179,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 60023.6764,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 60035.916,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 60054.2795,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 60081.8342,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 60123.1873,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 60185.2645,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 60278.4873,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 60418.5634,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 60629.2254,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 60946.462,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 61425.1542,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 62149.7125,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 63251.701,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 64642.0193,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 64943.3472,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 64992.0127,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 64999.8542,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 65000.8951,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 65001.781,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 65003.1098,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 65005.1032,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 65008.0933,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 65012.5787,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 65019.3074,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 65029.4018,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 65044.5465,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 65067.2702,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 65101.3711,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 65152.5569,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 65229.4132,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 65344.873,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 65518.4593,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 65779.7386,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 66173.7068,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 66769.3567,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 67673.7049,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 68997.8849,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 69895.2522,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 69983.7068,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 69997.9657,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 69999.8032,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 70001.3254,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 70002.6482,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 70004.6326,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 70007.6093,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 70012.0746,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 70018.7731,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 70028.8224,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 70043.8995,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 70066.5223,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 70100.4727,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 70151.4348,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 70227.9602,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 70342.9343,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 70515.8161,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 70776.0933,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 71168.685,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 71762.5653,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 72664.9606,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 73929.7179,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74205.4093,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74261.0772,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74264.0167,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74264.2591,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74264.3079,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74264.3095,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74264.312,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74264.3142,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74264.3176,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74264.3226,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74264.3301,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74264.3413,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74264.3582,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74264.3835,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74264.4215,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74264.4785,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74264.564,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74264.6923,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74264.8846,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74265.1731,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74265.6059,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74266.2551,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74267.2289,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74268.6896,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74270.8805,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74274.1669,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74279.0964,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74286.4904,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74297.5808,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74314.215,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74339.1633,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74376.5792,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74432.6878,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74516.8169,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74642.9341,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74831.938,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74976.9531,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74995.6293,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 74999.3891,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 75002.4485,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 75005.0893,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 75009.0505,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 75014.992,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 75023.9039,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 75037.271,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 75057.3196,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 75087.3882,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 75132.4813,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 75200.0989,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 75301.4759,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 75453.4299,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 75681.1103,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 76022.0671,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 76532.2334,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 77294.6288,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 78431.8011,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 79786.2399,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 79959.9515,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 79994.902,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 79999.4048,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 80005.0713,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 80009.9664,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 80017.3087,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 80028.3217,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 80044.8397,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 80069.6136,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 80106.7674,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 80162.4824,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 80246.0193,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 80371.2447,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 80558.9028,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 80839.9851,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 81260.6979,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 81889.7179,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 82828.6381,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 84226.6489,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 84909.2389,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 84996.9714,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 85009.1851,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 85019.8065,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 85035.7373,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 85059.6303,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 85095.4629,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 85149.1962,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 85229.7609,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 85350.5291,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 85531.5034,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 85802.5648,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 86208.2565,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 86814.7688,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 87719.9809,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 89067.5491,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 89889.3965,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 89994.9532,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 90023.4461,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 90048.1547,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 90085.2095,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 90140.774,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 90224.0806,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 90348.9503,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 90536.0517,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 90816.2471,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 91046.4434,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 91245.6981,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 91544.057,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 91990.4184,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 92657.3129,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 93651.698,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 94835.5271,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 94987.3141,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 95064.7337,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 95131.0211,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 95230.3911,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 95379.3083,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 95602.3742,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 95936.2755,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 96435.5583,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 97180.9526,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 98291.1029,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 99938.4656,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 99995.4075,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 100080.7717,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 100161.4369,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 100282.3369,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 100463.4667,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 100734.6659,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 101140.35,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 101746.3682,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 102649.7539,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 103992.1411,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 104809.3525,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 104978.5121,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 105231.7858,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 105474.53,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 105837.6801,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 106380.2312,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 107189.1671,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 108391.5685,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 109817.027,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 110554.4524,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 111187.6553,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 112130.1922,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 113527.6492,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 114850.7566,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 116801.5394,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 118511.4128,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 120703.8172,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 121725.5851,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 123234.6457,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 124668.1061,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 126700.0836,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 128676.3476,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 130596.9232,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 132461.8347,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 134271.1056,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 136024.7588,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 137722.8164,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 139365.2997,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 140952.2295,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 142483.6258,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 143959.5078,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 145379.8942,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 146744.8027,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 148054.2506,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 149308.2543,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 150506.8296,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 151649.9915,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 152737.7544,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 153770.1319,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 154747.1369,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 155668.7818,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 156535.0781,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 157346.0366,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 158101.6675,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 158801.9804,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 159446.9838,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 160036.686,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 160571.0943,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 161050.2154,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 161474.0554,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 161842.6194,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 162155.9121,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 162413.9375,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 162616.6988,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 162764.1985,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 162856.4384,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 162893.4197,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+},
+{
+"value": 162890.3264,
+"$type": "kOS.Safe.Encapsulation.ScalarDoubleValue"
+}
+],
+"$type": "kOS.Safe.Encapsulation.ListValue"
+}

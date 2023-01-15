@@ -1,7 +1,9 @@
 //does every experiment type once
 function doScience {
     parameter transmit is false.
+    parameter dump is false.
 
+    print " ".
     if transmit {
         print "transmitting science".
     } else {
@@ -11,26 +13,23 @@ function doScience {
     local doneBefore to list().
     local scienceBox to "x".
     bays on.
-    //wait 2.
     for p in ship:parts {
         if p:hasmodule("ModuleScienceExperiment") {
-            if not (doneBefore:find(p:name) = -1) {
-                break.
-            }
-            print p:name.
             set sm to p:getmodule("ModuleScienceExperiment").
-            if not sm:inoperable {
+            if (doneBefore:find(p:name) = -1) and not sm:inoperable
+               and not (sm:hasdata and not dump) {
+                print "    " + p:name.
                 sm:dump.
                 sm:reset.
-                wait 0.1.
+                wait until not sm:hasdata and not sm:deployed.
                 sm:deploy.
                 local ct to time:seconds.
                 wait until sm:hasdata or time:seconds > ct + 5.
                 if transmit and sm:hasdata {
                     sm:transmit.
                 }
+                doneBefore:add(p:name).
             }
-            doneBefore:add(p:name).
         } 
         //remenmber science collector for later
         if p:hasmodule("ModuleScienceContainer") {
@@ -38,13 +37,15 @@ function doScience {
         }
     }
 
-    if not transmit {
+    //TODO handle command module is science container correctly?
+    if not transmit and not (scienceBox = "x") and Career():CANDOACTIONS {
+        print "putting science in:" + scienceBox:name.
         scienceBox:getmodule("ModuleScienceContainer"):doaction("collect all", true).  
     }
 
     bays off.
-    //wait 2.
     print "experiments done".
+    print " ".
 }.
 
 set lastBiome to "".

@@ -6,12 +6,12 @@ run once other.
 
 stage.
 //control vertical speed to setpoint by setting throttle
-local vertSpeedPid to pidloop(1, 0, 0, -1, 1).
+local vertSpeedPid to pidloop(0.01, 0, 0, -fgh()/max(fgh(), ship:availablethrust), 1-fgh()/max(fgh(), ship:availablethrust)).
 set vertSpeedPid:setpoint to 0.
 
 local lock vertThrustRatio to vdot(ship:up:forevector, ship:facing:forevector).
 local tset to 0.
-local lock vertThrust to tset + fgh()/ship:availablethrust.
+local lock vertThrust to tset + fgh()/max(fgh(),ship:availablethrust).
 lock throttle to vertThrust/vertThrustRatio.
 local lock vertVel to vdot(ship:velocity:surface, ship:up:forevector).
 
@@ -46,7 +46,7 @@ local lock topVel to vdot(ship:velocity:surface, topVec).
 
 
 //value [0,1] in "part of throttle"
-local lock maxHorizThrot to (1 - (fgh()/ship:availablethrust)^2)^(1/2).
+local lock maxHorizThrot to (1 - (fgh()/max(fgh(), ship:availablethrust))^2)^(1/2).
 
 
 
@@ -68,44 +68,51 @@ local shower222 to vecdraw({return ship:position + V(0,0,1).}, {return ship:posi
 set shower222:show to true.
 
 
+set resetSetpoints to True.
 set sensitivity to 1.
 
-lock steering to unrotate(ship:up:forevector).
 until False {
-    set starPid:kp to starPid:kp + 0.01 * ship:control:pilotroll.
-    print starPid:kp at (0,13). 
 
-    if ship:control:pilottop = 0 {
-        set vertSpeedPid:setpoint to 0.
-    } else {
-        set vertSpeedPid:setpoint to vertSpeedPid:setpoint - ship:control:pilottop * sensitivity. 
-    }
+    set vertSpeedPid:setpoint to vertSpeedPid:setpoint - ship:control:pilottop * sensitivity. 
     set tset to vertSpeedPid:update(time:seconds, vertVel).
 
-
-    if ship:control:pilotstarboard = 0 {
-        set starPid:setpoint to 0.
-    } else {
-        set starPid:setpoint to starPid:setpoint + ship:control:pilotstarboard * sensitivity. 
-    }
+    set starPid:setpoint to starPid:setpoint + ship:control:pilotstarboard * sensitivity. 
     set starset to starPid:update(time:seconds, starVel).
 
-    if ship:control:pilotfore = 0 {
-        set topPid:setpoint to 0.
-    } else {
-        set topPid:setpoint to topPid:setpoint + ship:control:pilotfore* sensitivity. 
-    }
+    set topPid:setpoint to topPid:setpoint + ship:control:pilotfore* sensitivity. 
     set topset to topPid:update(time:seconds, topVel).
 
 
-    local requestedHorizThrot to (starset^2 + topset^2)^(1/2).
-    local scaling is maxHorizThrot/requestedHorizThrot.
-    set steerVec to unrotate(ship:up:forevector:normalized*vertThrust
-            + starVec*starset*maxHorizThrot*(1/requestedHorizThrot)
-            + topVec*topset*maxHorizThrot*(1/requestedHorizThrot)
+    local requestedHorizThrot to ((maxHorizThrot*starset)^2 + (maxHorizThrot*topset)^2)^(1/2).
+    if requestedHorizThrot > maxHorizThrot {
+        set starset to starset * maxHorizThrot/requestedHorizThrot.
+        set topset to topset * maxHorizThrot/requestedHorizThrot.
+    }
+
+    set steerVec to unrotate(ship:up:forevector:normalized*max(vertThrust, 0.001)
+            + starVec*starset
+            + topVec*topset
             ).  
     set steering to steerVec.
 
+    if ship:control:pilotyaw > 0 {
+        set resetSetpoints to True.
+    }
+    if ship:control:pilotyaw < 0 {
+        set resetSetpoints to False.
+    }
+
+    if resetSetpoints {
+        if ship:control:pilottop = 0 {
+            set vertSpeedPid:setpoint to 0.
+        }
+        if ship:control:pilotstarboard = 0 {
+            set starPid:setpoint to 0.
+        }
+        if ship:control:pilotfore = 0 {
+            set topPid:setpoint to 0.
+        }
+    }
     if not (ship:control:pilotpitch = 0) {
         break.
     }

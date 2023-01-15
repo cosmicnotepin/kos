@@ -1,3 +1,33 @@
+function safely_deploy_chutes {
+    when (not chutessafe) then {
+        chutessafe on.
+        return (not chutes).
+    }
+}
+
+function warp_until {
+    parameter condition.
+    print "warp_until()".
+    set tw to kuniverse:timewarp.
+    set tw:mode to "RAILS".
+    set w to 0.
+    until not w = tw:warp {
+        set w to w+1.
+        set tw:warp to w.
+    }
+    if tw:warp = 0 {
+        set tw:mode to "PHYSICS".
+        set w to 0.
+        until not w = tw:warp {
+            set w to w+1.
+            set tw:warp to w.
+        }
+    }
+    wait until condition().
+    set warp to 0.
+    print "warp_until() done.".
+}
+
 function visViva {
     parameter burnRadius.
     parameter targetSma.

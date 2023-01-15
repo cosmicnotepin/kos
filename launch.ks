@@ -2,7 +2,7 @@ run once execNd.
 run once other.
 run once rendezvous.
 run once land.
-run once kruscht.
+run once other.
 
 function launchToCirc {
     parameter height is 85000.
